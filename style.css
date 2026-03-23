@@ -363,14 +363,15 @@ a {
 .how__badge {
   display: inline-block;
   align-self: flex-start;
-  padding: 3px 9px;
+  padding: 2px 8px;
   background: var(--accent);
   color: #ffffff;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   border-radius: 20px;
+  white-space: nowrap;
 }
 
 .how__num {
@@ -385,6 +386,12 @@ a {
   font-size: 15px;
   color: var(--muted);
   line-height: 1.6;
+}
+
+.how__sub {
+  font-size: 13px;
+  color: rgba(138, 138, 154, 0.7);
+  line-height: 1.5;
 }
 
 /* ===== TESTIMONIALS ===== */
