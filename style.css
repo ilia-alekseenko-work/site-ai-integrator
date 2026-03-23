@@ -372,6 +372,7 @@ a {
   letter-spacing: 0.08em;
   border-radius: 20px;
   white-space: nowrap;
+  margin-top: auto;
 }
 
 .how__num {
