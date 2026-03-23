@@ -35,12 +35,11 @@
                     id="hero-cta">Написать в Telegram</a>
             </div>
             <div class="hero__photo">
-                <img src="photo.jpg" alt="Alekseenko Ilia" class="hero__img" />
+                <img src="img/photo.jpg" alt="Alekseenko Ilia" class="hero__img" />
             </div>
         </div>
     </section>
 
-    <!-- DIVIDER -->
     <div class="divider"></div>
 
     <!-- CASES -->
@@ -49,60 +48,220 @@
             <h2 class="section-title">Кейсы</h2>
             <div class="cards">
 
+                <!-- 1. Аудит документов -->
                 <article class="card">
-                    <div class="card__top">
+                    <div>
                         <h3 class="card__title">Аудит документов</h3>
-                        <span class="tag">n8n</span>
+                        <div class="card__tags">
+                            <span class="tag">n8n</span>
+                            <span class="tag">Google Drive</span>
+                            <span class="tag">Google Sheets</span>
+                        </div>
                     </div>
-                    <p class="card__desc">100+ подрядчиков, Google Drive, 3 обязательных файла у каждого — проверка
-                        вручную занимала 3 дня. Теперь воркфлоу делает это за 5 минут по расписанию.</p>
+                    <p class="card__desc">100+ подрядчиков, Google Drive, 3 обязательных файла у каждого —
+                        проверка вручную занимала 3 дня. Теперь воркфлоу делает это за 5 минут
+                        по расписанию.</p>
+                    <div class="card__media">
+                        <img src="img/workflow-audit.jpg" alt="Аудит документов — воркфлоу" />
+                    </div>
                 </article>
 
+                <!-- 2. Задачи из Telegram -->
                 <article class="card">
-                    <div class="card__top">
+                    <div>
                         <h3 class="card__title">Задачи из Telegram</h3>
-                        <span class="tag">Telegram API + AI</span>
+                        <div class="card__tags">
+                            <span class="tag">Telegram API</span>
+                            <span class="tag">AI</span>
+                        </div>
                     </div>
-                    <p class="card__desc">Дизайн-студия в Дубае теряла задачи в групповых чатах. Бот читает сообщения,
-                        извлекает задачи через AI и пушит в Todoist. Ноль потерь.</p>
+                    <p class="card__desc">Дизайн-студия в Дубае теряла задачи в групповых чатах. Бот читает
+                        сообщения, извлекает задачи через AI и пушит в Todoist. Ноль потерь.</p>
                 </article>
 
+                <!-- 3. AI-агент для косметологии -->
                 <article class="card">
-                    <div class="card__top">
-                        <h3 class="card__title">Платёжная интеграция</h3>
-                        <span class="tag">Python + API</span>
-                    </div>
-                    <p class="card__desc">Интеграция Mercado Pago для аргентинского клиента — локализованный платёжный
-                        флоу под латиноамериканский рынок.</p>
-                </article>
-
-                <article class="card">
-                    <div class="card__top">
+                    <div>
                         <h3 class="card__title">AI-агент для косметологии</h3>
-                        <span class="tag">RAG + Bitrix24 + AI</span>
+                        <div class="card__tags">
+                            <span class="tag">RAG</span>
+                            <span class="tag">Bitrix24</span>
+                            <span class="tag">AI</span>
+                        </div>
                     </div>
-                    <p class="card__desc">Мультиплатформенный RAG-агент для косметологической клиники: работает в
-                        Telegram, WhatsApp и открытых линиях Битрикса. Выявляет потребности клиента, консультирует по
-                        базе знаний, автоматически создаёт контрагента в Битрикс24 и уведомляет менеджера.</p>
+                    <p class="card__desc">Мультиплатформенный RAG-агент для косметологической клиники: работает
+                        в Telegram, WhatsApp и открытых линиях Битрикса. Выявляет потребности
+                        клиента, консультирует по базе знаний, автоматически создаёт контрагента
+                        в Битрикс24 и уведомляет менеджера.</p>
                 </article>
 
+                <!-- 4. Платёжная интеграция Mercado Pago -->
                 <article class="card">
-                    <div class="card__top">
-                        <h3 class="card__title">Корпоративное обучение</h3>
-                        <span class="tag">n8n + обучение</span>
+                    <div>
+                        <h3 class="card__title">Платёжная интеграция Mercado Pago</h3>
+                        <div class="card__tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">API</span>
+                        </div>
                     </div>
-                    <p class="card__desc">Обучил команду крупной логистической компании работе с n8n и AI-инструментами.
-                        Корпоративный формат, 12 сессий — сотрудники работают самостоятельно.</p>
+                    <p class="card__desc">Интеграция Mercado Pago для аргентинского клиента — локализованный
+                        платёжный флоу под латиноамериканский рынок.</p>
+                </article>
+
+                <!-- 5. Корпоративное обучение n8n + AI -->
+                <article class="card">
+                    <div>
+                        <h3 class="card__title">Корпоративное обучение n8n + AI</h3>
+                        <div class="card__tags">
+                            <span class="tag">n8n</span>
+                            <span class="tag">AI</span>
+                            <span class="tag">обучение</span>
+                        </div>
+                    </div>
+                    <p class="card__desc">Логистическая компания, бухгалтерия — 5 человек, нулевой технический
+                        бэкграунд. 12 сессий удалённо. После второго занятия команда самостоятельно
+                        собирала воркфлоу с Gmail + AI Agent + conditional logic. Формат: обучение
+                        под конкретные задачи компании, не абстрактный курс.</p>
+                    <div class="card__media">
+                        <img src="img/training-session.jpg" alt="Корпоративное обучение n8n" />
+                    </div>
+                </article>
+
+                <!-- 6. Платёжные поручения без ручного ввода -->
+                <article class="card">
+                    <div>
+                        <h3 class="card__title">Платёжные поручения без ручного ввода</h3>
+                        <div class="card__tags">
+                            <span class="tag">n8n</span>
+                            <span class="tag">СБИС</span>
+                            <span class="tag">T-Банк API</span>
+                        </div>
+                    </div>
+                    <p class="card__desc">Магазин автозапчастей в Санкт-Петербурге: каждая приходная накладная
+                        из СБИС требовала ручного создания платёжного поручения в Т-Банке. Теперь
+                        накладная автоматически создаёт готовое поручение через API Т-Банка.
+                        Ноль ручного ввода, ноль ошибок транскрипции.</p>
+                    <div class="card__media">
+                        <img src="img/workflow-sbis-tbank.jpg" alt="Платёжные поручения — воркфлоу СБИС T-Банк" />
+                    </div>
+                </article>
+
+                <!-- 7. Мониторинг конкурентов -->
+                <article class="card">
+                    <div>
+                        <h3 class="card__title">Мониторинг конкурентов</h3>
+                        <div class="card__tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Streamlit</span>
+                            <span class="tag">Telegram Bot</span>
+                        </div>
+                    </div>
+                    <p class="card__desc">Компания в строительном рынке отслеживала 20 подрядчиков и 2400+
+                        объявлений через громоздкий .exe на 500MB с ручным запуском. Заменил на
+                        веб-дашборд с фильтрами, аналитикой цен и Telegram-алертами на изменения.
+                        Система живёт на сервере и обслуживает себя сама.</p>
+                    <div class="card__media">
+                        <img src="img/dashboard-competitors.jpg" alt="Дашборд мониторинга конкурентов" />
+                    </div>
+                </article>
+
+                <!-- 8. Семантический поиск по видеоархиву -->
+                <article class="card">
+                    <div>
+                        <h3 class="card__title">Семантический поиск по видеоархиву</h3>
+                        <div class="card__tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Gemini Flash</span>
+                            <span class="tag">Qdrant</span>
+                            <span class="tag">FFmpeg</span>
+                        </div>
+                    </div>
+                    <p class="card__desc">ТВ-журналист с архивом сотен часов съёмок не мог найти нужный момент.
+                        Построил систему: FFmpeg извлекает кадры → Gemini описывает их → Qdrant
+                        хранит векторы. Запрос «красный Корвет на брусчатке» находит нужный кадр
+                        без знания точных слов из описания. Стоимость индексации: ~$5–7 за 100
+                        часов видео.</p>
+                    <div class="card__media">
+                        <img src="img/semantic-search-demo.jpg" alt="Семантический поиск по видео" />
+                        <div class="card__media-actions">
+                            <a href="https://youtube.com/shorts/lX34W1ZhJH4" target="_blank" rel="noopener"
+                                class="btn--demo">Watch demo →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 9. Telegram как CRM -->
+                <article class="card">
+                    <div>
+                        <h3 class="card__title">Telegram как CRM</h3>
+                        <div class="card__tags">
+                            <span class="tag">Make</span>
+                            <span class="tag">Telegram Bot API</span>
+                        </div>
+                    </div>
+                    <p class="card__desc">Малый бизнес терял переписку с клиентами в личных сообщениях бота.
+                        Настроил систему на супергруппе с топиками: каждый клиент получает отдельный
+                        тред с полной историей. Команда отвечает прямо в Telegram — без CRM, без
+                        новых инструментов, без обучения.</p>
                 </article>
 
             </div>
         </div>
     </section>
 
-    <!-- DIVIDER -->
     <div class="divider"></div>
 
-    <!-- REVIEWS -->
+    <!-- STACK -->
+    <section class="stack" id="stack">
+        <div class="container">
+            <h2 class="section-title">Инструменты</h2>
+            <div class="stack__grid">
+                <span class="stack__item">n8n</span>
+                <span class="stack__item">Make</span>
+                <span class="stack__item">Python</span>
+                <span class="stack__item">FastAPI</span>
+                <span class="stack__item">Claude API</span>
+                <span class="stack__item">OpenAI</span>
+                <span class="stack__item">Gemini</span>
+                <span class="stack__item">Telegram Bot API</span>
+                <span class="stack__item">Bitrix24</span>
+                <span class="stack__item">AmoCRM</span>
+                <span class="stack__item">PostgreSQL</span>
+                <span class="stack__item">Qdrant</span>
+                <span class="stack__item">Docker</span>
+                <span class="stack__item">T-Банк API</span>
+                <span class="stack__item">СБИС</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- HOW WE WORK -->
+    <section class="how" id="how">
+        <div class="container">
+            <h2 class="section-title">Как мы работаем</h2>
+            <div class="how__steps">
+                <div class="how__step">
+                    <span class="how__num">01</span>
+                    <p class="how__text">Созвон 15 минут — разбираем задачу, ничего не продаём</p>
+                </div>
+                <div class="how__step">
+                    <span class="how__num">02</span>
+                    <p class="how__text">Предложение: стек, сроки, стоимость — фиксированная цена</p>
+                </div>
+                <div class="how__step">
+                    <span class="how__num">03</span>
+                    <p class="how__text">Разработка и сдача с документацией</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- TESTIMONIALS -->
     <section class="reviews" id="reviews">
         <div class="container">
             <h2 class="section-title">Что говорят клиенты</h2>
@@ -115,7 +274,6 @@
                         ниже, чем обсуждали в начале. Будем сотрудничать дальше!»</p>
                     <div class="review-footer">
                         <span class="review-name">Анатолий</span>
-                        <span class="review-source">Отзыв с Авито</span>
                     </div>
                 </article>
 
@@ -126,7 +284,6 @@
                         доволен результатом, рекомендую!»</p>
                     <div class="review-footer">
                         <span class="review-name">Андрей</span>
-                        <span class="review-source">Отзыв с Авито</span>
                     </div>
                 </article>
 
@@ -136,7 +293,6 @@
                         очень помог, продолжаем сотрудничать. Приветливый, адекватный, толковый специалист.»</p>
                     <div class="review-footer">
                         <span class="review-name">Анастасия</span>
-                        <span class="review-source">Отзыв с Авито</span>
                     </div>
                 </article>
 
@@ -146,7 +302,6 @@
                         AI-ассистентом. Рекомендую!»</p>
                     <div class="review-footer">
                         <span class="review-name">Сергей</span>
-                        <span class="review-source">Отзыв с Авито</span>
                     </div>
                 </article>
 
@@ -155,7 +310,6 @@
                     <p class="review-text">«Всё чётко, по сути. Получил услугу быстрее, чем ожидал. Рекомендую.»</p>
                     <div class="review-footer">
                         <span class="review-name">Игорь Благодаров</span>
-                        <span class="review-source">Отзыв с Авито</span>
                     </div>
                 </article>
 
@@ -163,8 +317,9 @@
         </div>
     </section>
 
-    <!-- DIVIDER -->
     <div class="divider"></div>
+
+    <!-- FINAL CTA -->
     <section class="contact" id="contact">
         <div class="container contact__inner">
             <h2 class="contact__title">Есть задача?</h2>
@@ -178,7 +333,27 @@
     <footer class="footer">
         <div class="container footer__inner">
             <span>© 2025 Alekseenko Ilia</span>
-            <a href="https://t.me/alekseenko_ai" target="_blank" rel="noopener">t.me/alekseenko_ai</a>
+            <nav class="footer__links">
+                <a href="https://t.me/alekseenko_ai" target="_blank" rel="noopener" class="footer__link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.68 7.92c-.12.56-.46.7-.94.43l-2.6-1.92-1.26 1.21c-.14.14-.26.26-.52.26l.18-2.6 4.74-4.28c.2-.18-.05-.28-.32-.1L7.9 14.74l-2.54-.8c-.55-.17-.56-.55.12-.82l9.92-3.82c.46-.17.86.11.24.5z" fill="currentColor"/>
+                    </svg>
+                    Telegram
+                </a>
+                <a href="https://github.com/ilia-alekseenko-work" target="_blank" rel="noopener" class="footer__link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" fill="currentColor"/>
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://linkedin.com/in/ilya-alekseenko-147492268" target="_blank" rel="noopener" class="footer__link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    LinkedIn
+                </a>
+            </nav>
         </div>
     </footer>
 
