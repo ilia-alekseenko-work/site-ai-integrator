@@ -60,10 +60,12 @@
                         </div>
                     </div>
                     <p class="card__desc">ТВ-журналист с архивом сотен часов съёмок не мог найти нужный момент.
-                        Построил систему: FFmpeg извлекает кадры → Gemini описывает их → Qdrant
-                        хранит векторы. Запрос «красный Корвет на брусчатке» находит нужный кадр
-                        без знания точных слов из описания. Стоимость индексации: ~$5–7 за 100
-                        часов видео.</p>
+                        Проблема классического поиска: введёшь «машина» — система ищет слово «машина».
+                        Если AI описал кадр как «автомобиль» или «транспортное средство» — ничего не найдёт.<br><br>
+                        Семантический поиск работает иначе: запрос «красный Корвет на брусчатке» превращается
+                        в вектор из 3072 чисел, описывающих смысл. Система находит кадры с похожим смыслом —
+                        «vintage convertible», «classic red automobile» — все они про одно и то же.<br><br>
+                        Стоимость индексации: ~$5–7 за 100 часов видео.</p>
                     <div class="card__media">
                         <img src="img/semantic-search-demo.jpg" alt="Семантический поиск по видео" />
                         <div class="card__media-actions">
@@ -83,9 +85,18 @@
                             <span class="tag">Google Sheets</span>
                         </div>
                     </div>
-                    <p class="card__desc">100+ подрядчиков, Google Drive, 3 обязательных файла у каждого —
-                        проверка вручную занимала 3 дня. Теперь воркфлоу делает это за 5 минут
-                        по расписанию.</p>
+                    <p class="card__desc">Каждый квартал бухгалтерия вручную проверяла 100+ подрядчиков:
+                        у каждого должны быть 3 обязательных документа в Google Drive.
+                        Структура папок: Год → Квартал → Подрядчик → Объект.
+                        Сотни папок, ручная проверка, высокий риск ошибки — 3 дня работы.<br><br>
+                        Автоматизация на n8n:<br>
+                        → Берёт актуальный список объектов из Google Sheets<br>
+                        → Сканирует структуру папок Drive<br>
+                        → Проверяет наличие каждого из 3 файлов<br>
+                        → Логирует отсутствующие документы<br>
+                        → Формирует отчёт о расхождениях и отправляет ссылку руководителю<br><br>
+                        Результат: 3 дня → 5 минут по расписанию. Точность 100% —
+                        система не устаёт и не пропускает файлы.</p>
                     <div class="card__media">
                         <img src="img/workflow-audit.jpg" alt="Аудит документов — воркфлоу" />
                     </div>
@@ -368,6 +379,7 @@
 
     <script>
         (function () {
+            /* ── Cases toggle ── */
             var btn = document.getElementById('cases-toggle');
             var extra = document.getElementById('extra-cases');
             btn.addEventListener('click', function () {
@@ -383,6 +395,53 @@
                     btn.setAttribute('aria-expanded', 'true');
                     btn.textContent = 'Скрыть';
                 }
+            });
+
+            /* ── Lightbox ── */
+            var overlay = document.createElement('div');
+            overlay.id = 'lightbox';
+            overlay.setAttribute('aria-modal', 'true');
+            overlay.setAttribute('role', 'dialog');
+            overlay.innerHTML =
+                '<button class="lightbox__close" aria-label="Закрыть">×</button>' +
+                '<img class="lightbox__img" src="" alt="" />';
+            document.body.appendChild(overlay);
+
+            var lbImg = overlay.querySelector('.lightbox__img');
+            var lbClose = overlay.querySelector('.lightbox__close');
+
+            function openLightbox(src, alt) {
+                lbImg.src = src;
+                lbImg.alt = alt || '';
+                overlay.classList.add('lightbox--open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                overlay.classList.remove('lightbox--open');
+                document.body.style.overflow = '';
+                lbImg.src = '';
+            }
+
+            // Attach click to all card images
+            document.querySelectorAll('.card__media img').forEach(function (img) {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', function () {
+                    openLightbox(img.src, img.alt);
+                });
+            });
+
+            // Close on × button
+            lbClose.addEventListener('click', closeLightbox);
+
+            // Close on backdrop click (not on image itself)
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) closeLightbox();
+            });
+
+            // Close on ESC
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeLightbox();
             });
         })();
     </script>
