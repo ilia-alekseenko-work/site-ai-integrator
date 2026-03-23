@@ -292,10 +292,30 @@ a {
   padding: 72px 0;
 }
 
-.stack__grid {
+.stack__groups {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.stack__group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stack__label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.stack__pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .stack__item {
