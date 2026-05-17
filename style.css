@@ -596,6 +596,34 @@ a {
   color: var(--accent);
 }
 
+/* ===== ABOUT ===== */
+.about {
+  padding: 72px 0;
+}
+
+.about__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about__p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.about__p strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 700px) {
   .hero {
@@ -641,6 +669,7 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .about,
   .cases,
   .stack,
   .how,
