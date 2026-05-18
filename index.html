@@ -66,9 +66,154 @@
     <section class="cases" id="cases">
         <div class="container">
             <h2 class="section-title">Кейсы</h2>
+
+            <!-- F1: Корпоративное обучение n8n + AI — flagship -->
+            <article class="case-flagship">
+                <div class="case-flagship__header">
+                    <h3 class="case-flagship__title">Корпоративное обучение n8n + AI</h3>
+                    <div class="case-flagship__tags">
+                        <span class="tag">n8n</span>
+                        <span class="tag">AI</span>
+                        <span class="tag">обучение</span>
+                    </div>
+                </div>
+                <div class="case-flagship__hero-img">
+                    <img src="img/training-session.jpg" alt="Корпоративное обучение n8n" />
+                </div>
+                <div class="case-flagship__content">
+                    <p class="case-flagship__text">Бухгалтерия французской логистической группы — 5 человек, нулевой технический бэкграунд. 12 онлайн-сессий, работа на реальных задачах компании, не абстрактный курс.<br><br>
+                    Что освоили:<br>
+                    → Учёт запросов из Gmail в Google Таблицах с уведомлениями<br>
+                    → Аналитика входящих сообщений: кто, когда, сроки ответа<br>
+                    → AI-агент, который читает рассылки, делает выжимки и сохраняет в Sheets<br>
+                    → Настройка AI-узлов (OpenRouter, Claude, Gemini) и оптимизация промптов<br><br>
+                    После второго занятия команда самостоятельно собирала воркфлоу с Gmail + AI Agent + conditional logic. Сейчас планируют интеграцию n8n с 1С.</p>
+                </div>
+                <div class="case-flagship__testimonial">
+                    <div class="case-flagship__stars">★★★★★</div>
+                    <p class="case-flagship__quote">«Илья оказывал оперативную консультационную поддержку в Telegram между занятиями. Очень довольны профессионализмом и практическим подходом. Рекомендуем как компетентного специалиста по обучению и консалтингу n8n.»</p>
+                    <div class="case-flagship__meta">
+                        <span class="case-flagship__author">Ксения Маликова</span>
+                        <span class="case-flagship__source"> · Avito · 3 апреля 2026</span>
+                    </div>
+                    <a href="img/fm-review.jpg" target="_blank" rel="noopener" class="case-flagship__review-link">
+                        <img src="img/fm-review.jpg" alt="Отзыв Ксении Маликовой на Avito" />
+                    </a>
+                </div>
+            </article>
+
+            <!-- F2: Тутор-бот по химии — flagship -->
+            <article class="case-flagship">
+                <div class="case-flagship__header">
+                    <h3 class="case-flagship__title">Тутор-бот по химии</h3>
+                    <div class="case-flagship__tags">
+                        <span class="tag">n8n</span>
+                        <span class="tag">Telegram Bot API</span>
+                        <span class="tag">Claude</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Google Sheets API</span>
+                    </div>
+                </div>
+                <div class="case-flagship__img-grid">
+                    <img src="img/fedor-bot-task.jpg" alt="Запрос задания с фильтрами" />
+                    <img src="img/fedor-bot-lesson.jpg" alt="Информация по занятию" />
+                </div>
+                <div class="case-flagship__content">
+                    <p class="case-flagship__text">Репетитор по химии ведёт несколько учеников параллельно: у каждого своя программа, свой прогресс, свои пробелы. Подобрать задание вручную — открыть банк задач, вспомнить что уже проходили, учесть сложность, не повторить темы. На каждого ученика, каждое занятие.<br><br>
+                    Написали Telegram-бота на n8n:<br>
+                    → Выдаёт задания по номеру, теме и сложности — темы с `!` исключаются автоматически<br>
+                    → Отдельный режим для пробных занятий: задание → ответ → разбор в строгом порядке<br>
+                    → Информация по каждому занятию: оплата, дата, домашнее задание, оценки, ссылка на запись<br>
+                    → Поддерживает несколько номеров билетов в одном запросе<br>
+                    → Планировщик отслеживает прогресс каждого ученика каждые 10 минут<br><br>
+                    Сдано раньше срока. После сдачи клиент возвращался дважды: добавили модуль случайного выбора заданий с фильтрами по сложности и Include/Exclude логикой, а потом переписали сборку пробного экзамена — раньше шёл loop из 34 последовательных запросов к Google Sheets (по одному на каждый лист), теперь один batch-запрос за всё. Скорость сборки выросла примерно в 12 раз, ушли спорадические ошибки от rate limit.</p>
+                </div>
+                <div class="case-flagship__testimonial">
+                    <div class="case-flagship__stars">★★★★★</div>
+                    <p class="case-flagship__quote">«Илья предложил заменить узлы ИИ на код там, где это было не очень эффективно, — ускорило работу и уменьшило стоимость процесса. Рекомендую специалиста, буду обращаться ещё.»</p>
+                    <div class="case-flagship__meta">
+                        <span class="case-flagship__author">Фёдор Васильевич</span>
+                        <span class="case-flagship__source"> · Avito · 3 апреля 2026</span>
+                    </div>
+                    <a href="img/fedor-review.jpg" target="_blank" rel="noopener" class="case-flagship__review-link">
+                        <img src="img/fedor-review.jpg" alt="Отзыв Фёдора Васильевича на Avito" />
+                    </a>
+                </div>
+            </article>
+
+            <div class="cases__section-divider">
+                <span>Другие проекты</span>
+            </div>
+
             <div class="cards">
 
-                <!-- 1. Семантический поиск по видеоархиву -->
+                <!-- R1. Аудит документов -->
+                <article class="card">
+                    <div>
+                        <h3 class="card__title">Аудит документов</h3>
+                        <div class="card__tags">
+                            <span class="tag">n8n</span>
+                            <span class="tag">Google Drive</span>
+                            <span class="tag">Google Sheets</span>
+                        </div>
+                    </div>
+                    <p class="card__desc">Каждый квартал бухгалтерия вручную проверяла 100+ подрядчиков:
+                        у каждого должны быть 3 обязательных документа в Google Drive.
+                        Структура папок: Год → Квартал → Подрядчик → Объект.
+                        Сотни папок, ручная проверка, высокий риск ошибки — 3 дня работы.<br><br>
+                        Автоматизация на n8n:<br>
+                        → Берёт актуальный список объектов из Google Sheets<br>
+                        → Сканирует структуру папок Drive<br>
+                        → Проверяет наличие каждого из 3 файлов<br>
+                        → Логирует отсутствующие документы<br>
+                        → Формирует отчёт о расхождениях и отправляет ссылку руководителю<br><br>
+                        Результат: 3 дня → 5 минут по расписанию. Точность 100% —
+                        система не устаёт и не пропускает файлы.</p>
+                    <div class="card__media">
+                        <img src="img/workflow-audit.jpg" alt="Аудит документов — воркфлоу" />
+                    </div>
+                </article>
+
+                <!-- R2. Мониторинг конкурентов -->
+                <article class="card">
+                    <div>
+                        <h3 class="card__title">Мониторинг конкурентов</h3>
+                        <div class="card__tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Streamlit</span>
+                            <span class="tag">Telegram Bot</span>
+                        </div>
+                    </div>
+                    <p class="card__desc">Компания в строительном рынке отслеживала 20 подрядчиков и 2400+
+                        объявлений через громоздкий .exe на 500MB с ручным запуском. Заменил на
+                        веб-дашборд с фильтрами, аналитикой цен и Telegram-алертами на изменения.
+                        Система живёт на сервере и обслуживает себя сама.</p>
+                    <div class="card__media">
+                        <img src="img/dashboard-competitors.jpg" alt="Дашборд мониторинга конкурентов" />
+                    </div>
+                </article>
+
+                <!-- R3. Платёжные поручения без ручного ввода -->
+                <article class="card">
+                    <div>
+                        <h3 class="card__title">Платёжные поручения без ручного ввода</h3>
+                        <div class="card__tags">
+                            <span class="tag">n8n</span>
+                            <span class="tag">СБИС</span>
+                            <span class="tag">T-Банк API</span>
+                        </div>
+                    </div>
+                    <p class="card__desc">Магазин автозапчастей в Санкт-Петербурге: каждая приходная накладная
+                        из СБИС требовала ручного создания платёжного поручения в Т-Банке. Теперь
+                        накладная автоматически создаёт готовое поручение через API Т-Банка.
+                        Ноль ручного ввода, ноль ошибок транскрипции.</p>
+                    <div class="card__media">
+                        <img src="img/workflow-sbis-tbank.jpg" alt="Платёжные поручения — воркфлоу СБИС T-Банк" />
+                    </div>
+                </article>
+
+                <!-- R4. Семантический поиск по видеоархиву -->
                 <article class="card">
                     <div>
                         <h3 class="card__title">Семантический поиск по видеоархиву</h3>
@@ -98,73 +243,32 @@
                     </div>
                 </article>
 
-                <!-- 2. Аудит документов -->
+                <!-- R5. Задачи из Telegram для команды -->
                 <article class="card">
                     <div>
-                        <h3 class="card__title">Аудит документов</h3>
+                        <h3 class="card__title">Задачи из Telegram для команды</h3>
                         <div class="card__tags">
                             <span class="tag">n8n</span>
-                            <span class="tag">Google Drive</span>
-                            <span class="tag">Google Sheets</span>
+                            <span class="tag">Telegram Bot API</span>
+                            <span class="tag">OpenAI Whisper</span>
+                            <span class="tag">GPT-4.1-mini</span>
+                            <span class="tag">Todoist API</span>
                         </div>
                     </div>
-                    <p class="card__desc">Каждый квартал бухгалтерия вручную проверяла 100+ подрядчиков:
-                        у каждого должны быть 3 обязательных документа в Google Drive.
-                        Структура папок: Год → Квартал → Подрядчик → Объект.
-                        Сотни папок, ручная проверка, высокий риск ошибки — 3 дня работы.<br><br>
-                        Автоматизация на n8n:<br>
-                        → Берёт актуальный список объектов из Google Sheets<br>
-                        → Сканирует структуру папок Drive<br>
-                        → Проверяет наличие каждого из 3 файлов<br>
-                        → Логирует отсутствующие документы<br>
-                        → Формирует отчёт о расхождениях и отправляет ссылку руководителю<br><br>
-                        Результат: 3 дня → 5 минут по расписанию. Точность 100% —
-                        система не устаёт и не пропускает файлы.</p>
+                    <p class="card__desc">Девелоперская компания в Дубае: команда из 10 человек, 16 параллельных проектов, общение в Telegram. Руководитель надиктовывает голосом или текстом — задача должна оказаться в Todoist у нужного сотрудника в нужном проекте, без ручной перепечатки.<br><br>
+                        Telegram-бот на n8n:<br>
+                        → Принимает текст и голосовые — голосовые расшифровывает через Whisper<br>
+                        → GPT-4.1-mini вытягивает из сообщения суть: что сделать, кто ответственный, в каком проекте, к какому сроку<br>
+                        → Гибкое сопоставление имён сотрудников — русские падежи, прозвища, сокращения<br>
+                        → Названия проектов узнаются по тому, как их реально называют в команде, а не только по официальным именам<br>
+                        → Каждый сотрудник работает под своим Todoist-токеном — токены хранятся в .env на сервере, бот выбирает нужный по telegram_id<br><br>
+                        Клиент вернулся через полгода после первого проекта (Telegram-бот для отслеживания обязательств в групповых чатах). Сейчас Todoist-интеграция в финале тестирования.</p>
                     <div class="card__media">
-                        <img src="img/workflow-audit.jpg" alt="Аудит документов — воркфлоу" />
+                        <img src="img/danil-todoist.jpg" alt="Задачи из Telegram для команды — Todoist" />
                     </div>
                 </article>
 
-                <!-- 3. Мониторинг конкурентов -->
-                <article class="card">
-                    <div>
-                        <h3 class="card__title">Мониторинг конкурентов</h3>
-                        <div class="card__tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">Streamlit</span>
-                            <span class="tag">Telegram Bot</span>
-                        </div>
-                    </div>
-                    <p class="card__desc">Компания в строительном рынке отслеживала 20 подрядчиков и 2400+
-                        объявлений через громоздкий .exe на 500MB с ручным запуском. Заменил на
-                        веб-дашборд с фильтрами, аналитикой цен и Telegram-алертами на изменения.
-                        Система живёт на сервере и обслуживает себя сама.</p>
-                    <div class="card__media">
-                        <img src="img/dashboard-competitors.jpg" alt="Дашборд мониторинга конкурентов" />
-                    </div>
-                </article>
-
-                <!-- 4. Платёжные поручения без ручного ввода -->
-                <article class="card">
-                    <div>
-                        <h3 class="card__title">Платёжные поручения без ручного ввода</h3>
-                        <div class="card__tags">
-                            <span class="tag">n8n</span>
-                            <span class="tag">СБИС</span>
-                            <span class="tag">T-Банк API</span>
-                        </div>
-                    </div>
-                    <p class="card__desc">Магазин автозапчастей в Санкт-Петербурге: каждая приходная накладная
-                        из СБИС требовала ручного создания платёжного поручения в Т-Банке. Теперь
-                        накладная автоматически создаёт готовое поручение через API Т-Банка.
-                        Ноль ручного ввода, ноль ошибок транскрипции.</p>
-                    <div class="card__media">
-                        <img src="img/workflow-sbis-tbank.jpg" alt="Платёжные поручения — воркфлоу СБИС T-Банк" />
-                    </div>
-                </article>
-
-                <!-- 5. AI-агент для косметологии -->
+                <!-- R6. AI-агент для косметологии -->
                 <article class="card">
                     <div>
                         <h3 class="card__title">AI-агент для косметологии</h3>
@@ -180,7 +284,7 @@
                         в Битрикс24 и уведомляет менеджера.</p>
                 </article>
 
-                <!-- 6. Telegram как CRM -->
+                <!-- R7. Telegram как CRM -->
                 <article class="card">
                     <div>
                         <h3 class="card__title">Telegram как CRM</h3>
@@ -195,44 +299,7 @@
                         новых инструментов, без обучения.</p>
                 </article>
 
-            </div>
-
-            <!-- Hidden cases (7–9) -->
-            <div class="cards cards--hidden" id="extra-cases" aria-hidden="true">
-
-                <!-- 7. Задачи из Telegram -->
-                <article class="card">
-                    <div>
-                        <h3 class="card__title">Задачи из Telegram</h3>
-                        <div class="card__tags">
-                            <span class="tag">Telegram API</span>
-                            <span class="tag">AI</span>
-                        </div>
-                    </div>
-                    <p class="card__desc">Дизайн-студия в Дубае теряла задачи в групповых чатах. Бот читает
-                        сообщения, извлекает задачи через AI и пушит в Todoist. Ноль потерь.</p>
-                </article>
-
-                <!-- 8. Корпоративное обучение n8n + AI -->
-                <article class="card">
-                    <div>
-                        <h3 class="card__title">Корпоративное обучение n8n + AI</h3>
-                        <div class="card__tags">
-                            <span class="tag">n8n</span>
-                            <span class="tag">AI</span>
-                            <span class="tag">обучение</span>
-                        </div>
-                    </div>
-                    <p class="card__desc">Логистическая компания, бухгалтерия — 5 человек, нулевой технический
-                        бэкграунд. 12 сессий удалённо. После второго занятия команда самостоятельно
-                        собирала воркфлоу с Gmail + AI Agent + conditional logic. Формат: обучение
-                        под конкретные задачи компании, не абстрактный курс.</p>
-                    <div class="card__media">
-                        <img src="img/training-session.jpg" alt="Корпоративное обучение n8n" />
-                    </div>
-                </article>
-
-                <!-- 9. Платёжная интеграция Mercado Pago -->
+                <!-- R8. Платёжная интеграция Mercado Pago -->
                 <article class="card">
                     <div>
                         <h3 class="card__title">Платёжная интеграция Mercado Pago</h3>
@@ -245,10 +312,6 @@
                         платёжный флоу под латиноамериканский рынок.</p>
                 </article>
 
-            </div>
-
-            <div class="cases__toggle-wrap">
-                <button class="cases__toggle" id="cases-toggle" aria-expanded="false">Показать ещё</button>
             </div>
         </div>
     </section>
@@ -446,24 +509,6 @@
 
     <script>
         (function () {
-            /* ── Cases toggle ── */
-            var btn = document.getElementById('cases-toggle');
-            var extra = document.getElementById('extra-cases');
-            btn.addEventListener('click', function () {
-                var expanded = btn.getAttribute('aria-expanded') === 'true';
-                if (expanded) {
-                    extra.classList.remove('cards--visible');
-                    extra.setAttribute('aria-hidden', 'true');
-                    btn.setAttribute('aria-expanded', 'false');
-                    btn.textContent = 'Показать ещё';
-                } else {
-                    extra.classList.add('cards--visible');
-                    extra.setAttribute('aria-hidden', 'false');
-                    btn.setAttribute('aria-expanded', 'true');
-                    btn.textContent = 'Скрыть';
-                }
-            });
-
             /* ── Lightbox ── */
             var overlay = document.createElement('div');
             overlay.id = 'lightbox';
