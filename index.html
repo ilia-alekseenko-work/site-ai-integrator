@@ -586,16 +586,9 @@
     <script>
         const heroVideo = document.querySelector('video.hero__img');
         if (heroVideo) {
-            function setMuteState(isMuted) {
-                heroVideo.muted = isMuted;
-                heroVideo.play().catch(() => {
-                    heroVideo.muted = true;
-                    heroVideo.play();
-                });
-            }
-            heroVideo.addEventListener('mouseenter', () => setMuteState(false));
-            heroVideo.addEventListener('mouseleave', () => setMuteState(true));
-            heroVideo.addEventListener('click', () => setMuteState(!heroVideo.muted));
+            heroVideo.addEventListener('mouseenter', () => { heroVideo.muted = false; });
+            heroVideo.addEventListener('mouseleave', () => { heroVideo.muted = true; });
+            heroVideo.addEventListener('click', () => { heroVideo.muted = !heroVideo.muted; });
         }
     </script>
 
