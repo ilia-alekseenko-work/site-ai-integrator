@@ -795,9 +795,9 @@ a {
   }
 
   .hero__img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    width: 240px;
+    height: 220px;
+    border-radius: 16px;
   }
 
   .hero__name {
