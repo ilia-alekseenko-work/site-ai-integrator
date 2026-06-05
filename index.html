@@ -584,45 +584,19 @@
     </footer>
 
     <script>
-        (function () {
-            var heroVideo = document.querySelector('video.hero__img');
-            if (!heroVideo) return;
-
-            // Mute badge — hints user to interact; disappears once audio unlocked
-            var badge = document.createElement('span');
-            badge.textContent = '🔇';
-            badge.style.cssText = 'position:absolute;bottom:10px;right:12px;font-size:20px;pointer-events:none;opacity:0.85;transition:opacity .3s';
-            heroVideo.parentElement.style.position = 'relative';
-            heroVideo.parentElement.appendChild(badge);
-
-            function hideBadge() { badge.style.opacity = '0'; }
-
-            function safePlay(muted) {
-                heroVideo.muted = muted;
-                heroVideo.play().catch(function (err) {
-                    if (err.name === 'NotAllowedError') {
-                        heroVideo.muted = true;
-                        heroVideo.play().catch(function () {});
-                    }
-                    // AbortError = superseded by newer play() — ignore
+        const heroVideo = document.querySelector('video.hero__img');
+        if (heroVideo) {
+            function setMuteState(isMuted) {
+                heroVideo.muted = isMuted;
+                heroVideo.play().catch(() => {
+                    heroVideo.muted = true;
+                    heroVideo.play();
                 });
             }
-
-            // Desktop: hover to unmute (works after any click anywhere on the page)
-            heroVideo.addEventListener('mouseenter', function () { safePlay(false); });
-            heroVideo.addEventListener('mouseleave', function () { safePlay(true); });
-
-            // Desktop click + any-page-click unlock (hides badge, enables subsequent hover)
-            heroVideo.addEventListener('click', function () { hideBadge(); safePlay(!heroVideo.muted); });
-            document.addEventListener('click', hideBadge, { once: true });
-
-            // Mobile: touchend + preventDefault intercepts before iOS pauses the video
-            heroVideo.addEventListener('touchend', function (e) {
-                e.preventDefault();
-                hideBadge();
-                safePlay(!heroVideo.muted);
-            }, { passive: false });
-        })();
+            heroVideo.addEventListener('mouseenter', () => setMuteState(false));
+            heroVideo.addEventListener('mouseleave', () => setMuteState(true));
+            heroVideo.addEventListener('click', () => setMuteState(!heroVideo.muted));
+        }
     </script>
 
     <!-- Telegram CTA conversion tracking -->
