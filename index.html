@@ -586,9 +586,18 @@
     <script>
         const heroVideo = document.querySelector('video.hero__img');
         if (heroVideo) {
-            heroVideo.addEventListener('mouseenter', () => { heroVideo.muted = false; });
-            heroVideo.addEventListener('mouseleave', () => { heroVideo.muted = true; });
-            heroVideo.addEventListener('click', () => { heroVideo.muted = !heroVideo.muted; });
+            heroVideo.addEventListener('mouseenter', () => {
+                heroVideo.muted = false;
+                heroVideo.play().catch(() => { heroVideo.muted = true; });
+            });
+            heroVideo.addEventListener('mouseleave', () => {
+                heroVideo.muted = true;
+                if (heroVideo.paused) heroVideo.play().catch(() => {});
+            });
+            heroVideo.addEventListener('click', () => {
+                heroVideo.muted = !heroVideo.muted;
+                heroVideo.play().catch(() => { heroVideo.muted = true; });
+            });
         }
     </script>
 
