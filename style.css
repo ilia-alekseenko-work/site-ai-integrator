@@ -176,10 +176,11 @@ a {
   width: 260px;
   height: 260px;
   object-fit: cover;
-  object-position: center top;
+  object-position: 42% 50%;
   border-radius: 20px;
   display: block;
   border: 1px solid var(--border);
+  cursor: pointer;
 }
 
 .hero__label {
@@ -191,11 +192,11 @@ a {
 }
 
 .hero__name {
-  font-size: clamp(40px, 6vw, 64px);
+  font-size: clamp(26px, 4.2vw, 44px);
   font-weight: 700;
   color: var(--text);
   letter-spacing: -0.03em;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 .hero__tagline {
@@ -800,7 +801,7 @@ a {
   }
 
   .hero__name {
-    font-size: 40px;
+    font-size: 26px;
   }
 
   .hero__tagline {
@@ -871,5 +872,183 @@ a {
   .footer__links {
     flex-wrap: wrap;
     gap: 12px;
+  }
+}
+
+/* ===== NAV LOGO (v3) ===== */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.logo img {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ===== HERO ADDITIONS (v3) ===== */
+.hero__byline {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.risk-line {
+  font-size: 0.8rem;
+  color: var(--muted);
+  opacity: 0.72;
+  line-height: 1.45;
+  max-width: 460px;
+}
+
+/* ===== CASES STATS BAND (v3) ===== */
+.cases__stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.cases__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cases__stat b {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.cases__stat span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ===== METRIC BLOCKS (v3) ===== */
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  min-width: 90px;
+}
+
+.metric span {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.metric b {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.metric--before {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+}
+
+.metric--before span { color: var(--muted); }
+.metric--before b { color: var(--text); }
+
+.metric--after {
+  background: rgba(34, 197, 94, 0.09);
+  border: 1px solid rgba(34, 197, 94, 0.22);
+}
+
+.metric--after span { color: rgba(74, 222, 128, 0.8); }
+.metric--after b { color: #4ade80; }
+
+.metric--highlight {
+  background: var(--accent-bg);
+  border: 1px solid rgba(79, 142, 247, 0.22);
+}
+
+.metric--highlight span { color: var(--accent); opacity: 0.85; }
+.metric--highlight b { color: var(--accent); }
+
+/* ===== MID-PAGE CTA (v3) ===== */
+.mid-cta {
+  margin: 48px 0 0;
+  padding: 32px;
+  background: var(--surface);
+  border: 1px solid rgba(79, 142, 247, 0.3);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.mid-cta__label {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+/* ===== IMAGE CONSISTENCY (v3) ===== */
+.card__media img {
+  border: 1px solid var(--border);
+  aspect-ratio: 3 / 2;
+}
+
+.case-flagship__img-grid img {
+  border: 1px solid var(--border);
+  aspect-ratio: 4 / 3;
+}
+
+.case-flagship__hero-img img {
+  border: 1px solid var(--border);
+  aspect-ratio: 16 / 9;
+}
+
+/* ===== RESPONSIVE ADDITIONS (v3) ===== */
+@media (max-width: 700px) {
+  .cases__stats {
+    gap: 24px;
+  }
+
+  .metrics {
+    gap: 6px;
+  }
+
+  .metric {
+    min-width: 80px;
+    padding: 8px 12px;
+  }
+
+  .metric b {
+    font-size: 15px;
+  }
+
+  .mid-cta {
+    padding: 24px 20px;
+    margin-top: 32px;
+  }
+
+  .mid-cta__label {
+    font-size: 18px;
   }
 }
