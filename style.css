@@ -909,20 +909,24 @@ a {
 
 /* ===== CASES STATS BAND (v3) ===== */
 .cases__stats {
-  display: flex;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
   margin-bottom: 40px;
-  flex-wrap: wrap;
 }
 
 .cases__stat {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 6px;
+  padding: 20px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
 .cases__stat b {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
   color: var(--accent);
   letter-spacing: -0.02em;
@@ -930,8 +934,11 @@ a {
 }
 
 .cases__stat span {
-  font-size: 13px;
+  font-size: 12px;
+  font-weight: 500;
   color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 /* ===== METRIC BLOCKS (v3) ===== */
@@ -1027,7 +1034,8 @@ a {
 /* ===== RESPONSIVE ADDITIONS (v3) ===== */
 @media (max-width: 700px) {
   .cases__stats {
-    gap: 24px;
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .metrics {
