@@ -584,23 +584,45 @@
     </footer>
 
     <script>
-        const heroVideo = document.querySelector('video.hero__img');
-        if (heroVideo) {
+        (function () {
+            var heroVideo = document.querySelector('video.hero__img');
+            if (!heroVideo) return;
+
+            // Mute badge — hints user to interact; disappears once audio unlocked
+            var badge = document.createElement('span');
+            badge.textContent = '🔇';
+            badge.style.cssText = 'position:absolute;bottom:10px;right:12px;font-size:20px;pointer-events:none;opacity:0.85;transition:opacity .3s';
+            heroVideo.parentElement.style.position = 'relative';
+            heroVideo.parentElement.appendChild(badge);
+
+            function hideBadge() { badge.style.opacity = '0'; }
+
             function safePlay(muted) {
                 heroVideo.muted = muted;
                 heroVideo.play().catch(function (err) {
                     if (err.name === 'NotAllowedError') {
-                        // Browser blocked unmuted autoplay — remute and keep playing
                         heroVideo.muted = true;
                         heroVideo.play().catch(function () {});
                     }
-                    // AbortError = superseded by a newer play() call — ignore
+                    // AbortError = superseded by newer play() — ignore
                 });
             }
+
+            // Desktop: hover to unmute (works after any click anywhere on the page)
             heroVideo.addEventListener('mouseenter', function () { safePlay(false); });
             heroVideo.addEventListener('mouseleave', function () { safePlay(true); });
-            heroVideo.addEventListener('click',       function () { safePlay(!heroVideo.muted); });
-        }
+
+            // Desktop click + any-page-click unlock (hides badge, enables subsequent hover)
+            heroVideo.addEventListener('click', function () { hideBadge(); safePlay(!heroVideo.muted); });
+            document.addEventListener('click', hideBadge, { once: true });
+
+            // Mobile: touchend + preventDefault intercepts before iOS pauses the video
+            heroVideo.addEventListener('touchend', function (e) {
+                e.preventDefault();
+                hideBadge();
+                safePlay(!heroVideo.muted);
+            }, { passive: false });
+        })();
     </script>
 
     <!-- Telegram CTA conversion tracking -->
