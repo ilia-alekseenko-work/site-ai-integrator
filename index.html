@@ -586,18 +586,20 @@
     <script>
         const heroVideo = document.querySelector('video.hero__img');
         if (heroVideo) {
-            heroVideo.addEventListener('mouseenter', () => {
-                heroVideo.muted = false;
-                heroVideo.play().catch(() => { heroVideo.muted = true; });
-            });
-            heroVideo.addEventListener('mouseleave', () => {
-                heroVideo.muted = true;
-                if (heroVideo.paused) heroVideo.play().catch(() => {});
-            });
-            heroVideo.addEventListener('click', () => {
-                heroVideo.muted = !heroVideo.muted;
-                heroVideo.play().catch(() => { heroVideo.muted = true; });
-            });
+            function safePlay(muted) {
+                heroVideo.muted = muted;
+                heroVideo.play().catch(function (err) {
+                    if (err.name === 'NotAllowedError') {
+                        // Browser blocked unmuted autoplay — remute and keep playing
+                        heroVideo.muted = true;
+                        heroVideo.play().catch(function () {});
+                    }
+                    // AbortError = superseded by a newer play() call — ignore
+                });
+            }
+            heroVideo.addEventListener('mouseenter', function () { safePlay(false); });
+            heroVideo.addEventListener('mouseleave', function () { safePlay(true); });
+            heroVideo.addEventListener('click',       function () { safePlay(!heroVideo.muted); });
         }
     </script>
 
