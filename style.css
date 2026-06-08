@@ -1229,6 +1229,10 @@ a {
 
 /* ===== NAV RESPONSIVE (v4) ===== */
 @media (max-width: 767px) {
+  .logo span {
+    display: none;
+  }
+
   .nav__links {
     display: none;
     position: absolute;
