@@ -30,7 +30,7 @@
     <!-- hreflang -->
     <link rel="alternate" hreflang="en" href="https://ai.axel21.quest/?lang=en">
     <link rel="alternate" hreflang="ru" href="https://ai.axel21.quest/?lang=ru">
-    <link rel="alternate" hreflang="x-default" href="https://ai.axel21.quest/?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://ai.axel21.quest/?lang=ru">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -84,7 +84,7 @@
                     <button class="lang-btn" id="lang-ru" aria-pressed="false">RU</button>
                 </div>
                 <!-- TODO(Ilia): real Calendly URL -->
-                <a href="https://calendly.com/REPLACE-ME" target="_blank" rel="noopener" class="btn btn--primary nav__cta" id="nav-cta">
+                <a href="https://calendly.com/ilia-alekseenko-work/15-min-call" target="_blank" rel="noopener" class="btn btn--primary nav__cta" id="nav-cta">
                     <span data-i18n="nav.cta">Book a call</span>
                 </a>
                 <button class="nav__hamburger" id="nav-hamburger" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu">
@@ -105,7 +105,7 @@
                 </h1>
                 <p class="hero__subline" data-i18n="hero.subline">Custom AI systems and automation — from first call to production.</p>
                 <!-- TODO(Ilia): real Calendly URL -->
-                <a href="https://calendly.com/REPLACE-ME" target="_blank" rel="noopener" class="btn btn--primary hero__cta" id="hero-cta">
+                <a href="https://calendly.com/ilia-alekseenko-work/15-min-call" target="_blank" rel="noopener" class="btn btn--primary hero__cta" id="hero-cta">
                     <span data-i18n="hero.cta">Book a free 15-min call</span>
                 </a>
             </div>
@@ -133,18 +133,39 @@
 
     <!-- ABOUT -->
     <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">Обо мне</h2>
-            <div class="about__body">
-                <p class="about__p">Илья Алексеенко. 4+ года в автоматизации бизнеса.</p>
-                <p class="about__p">Работаю соло: беру проект от первого созвона до прод-деплоя — архитектура, разработка, инфраструктура, обучение команды. Без передачи между отделами и менеджеров посередине.</p>
-                <p class="about__p">Стек в ежедневной работе: n8n, Python (FastAPI), Docker, PostgreSQL, Telegram Bot API, Claude/OpenAI/Gemini API. Клиентские проекты разворачиваю на собственной инфраструктуре в Hetzner — без привязки к no-code-облакам и их лимитам.</p>
-                <div class="about__meta">
-                    <p class="about__p"><strong>Локация:</strong> Куритиба, Бразилия. Удалённо, подстраиваюсь под часовой пояс клиента.</p>
-                    <p class="about__p"><strong>Языки:</strong> русский (нативный), английский (B2, дотягиваю до C1), португальский (учу).</p>
-                    <p class="about__p"><strong>Форматы работы:</strong> проекты под ключ с фиксированной ценой, консультации, корпоративное обучение n8n для команды.</p>
+        <div class="container container--wide">
+            <div class="about__grid">
+                <div class="about__left">
+                    <h2 class="section-title" data-i18n="about.title">Обо мне</h2>
+                    <p class="about__p" data-i18n="about.p1">Беру проект целиком: от первого созвона до прод-деплоя. Архитектура, разработка, инфраструктура, обучение команды — всё на одном человеке. Для клиента это значит: один ответственный за результат, без потерь между отделами и менеджеров посередине.</p>
+                    <p class="about__p" data-i18n="about.p2">Разворачиваю проекты гибко: на своей инфраструктуре или поднимаю отдельный сервер под клиента. В любом случае — без привязки к no-code-облакам, их лимитам и абонентской плате.</p>
+                    <blockquote class="about__principle">
+                        <strong data-i18n="about.principle.title">Не продаю AI ради AI.</strong>
+                        <span data-i18n="about.principle.body">Автоматизирую то, что у клиента уже работает руками, — чтобы оно начало работать само. Если задача решается без LLM дешевле и надёжнее — так и делаю.</span>
+                    </blockquote>
                 </div>
-                <p class="about__p">Принцип: автоматизирую то, что у клиента и так работает руками — чтобы оно начало работать само. Не продаю AI ради AI: если задача решается без LLM дешевле и надёжнее, так и делаю.</p>
+                <div class="about__right">
+                    <!-- ALTERNATIVE: replace controls + preload="metadata" with autoplay muted loop and a custom mute toggle button -->
+                    <figure class="about__video">
+                        <video controls preload="metadata" playsinline poster="img/hero-intro-poster.jpg">
+                            <source id="about-video-src" src="img/hero-intro.mp4" type="video/mp4">
+                        </video>
+                    </figure>
+                    <div class="about__meta">
+                        <div class="about__meta-row">
+                            <strong data-i18n="about.meta.location.label">Локация</strong>
+                            <span data-i18n="about.meta.location.value">Куритиба, Бразилия. Удалённо, под часовой пояс клиента.</span>
+                        </div>
+                        <div class="about__meta-row">
+                            <strong data-i18n="about.meta.langs.label">Языки</strong>
+                            <span data-i18n="about.meta.langs.value">русский (нативный), английский (B2→C1), португальский (учу).</span>
+                        </div>
+                        <div class="about__meta-row">
+                            <strong data-i18n="about.meta.formats.label">Форматы</strong>
+                            <span data-i18n="about.meta.formats.value">проекты под ключ с фиксированной ценой · консультации · корпоративное обучение n8n для команды.</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -653,7 +674,18 @@
                 'hero.chip2': 'in production',
                 'hero.badge1': '4+',
                 'hero.badge2': 'yrs',
-                'photo.alt': 'Ilia Alekseenko, AI automation engineer'
+                'photo.alt': 'Ilia Alekseenko, AI automation engineer',
+                'about.title': 'About',
+                'about.p1': 'I take the whole project end to end: from the first call to production deploy. Architecture, development, infrastructure, team training — all on one person. For the client that means one person accountable for the result, with no hand-offs between departments and no managers in the middle.',
+                'about.p2': 'I deploy projects flexibly: on my own infrastructure, or I spin up a dedicated server for the client. Either way — no lock-in to no-code clouds, their limits, or subscription fees.',
+                'about.principle.title': 'I don\'t sell AI for the sake of AI.',
+                'about.principle.body': 'I automate what already works manually for the client — so it starts running on its own. If a task is solved cheaper and more reliably without an LLM, that\'s what I do.',
+                'about.meta.location.label': 'Location',
+                'about.meta.location.value': 'Curitiba, Brazil. Remote, aligned to the client\'s time zone.',
+                'about.meta.langs.label': 'Languages',
+                'about.meta.langs.value': 'Russian (native), English (B2→C1), Portuguese (learning).',
+                'about.meta.formats.label': 'Formats',
+                'about.meta.formats.value': 'fixed-price turnkey projects · consulting · n8n team training.'
             },
             ru: {
                 'brand.name': 'Илья Алексеенко',
@@ -672,18 +704,29 @@
                 'hero.chip2': 'в проде',
                 'hero.badge1': '4+',
                 'hero.badge2': 'года',
-                'photo.alt': 'Илья Алексеенко, AI-интегратор'
+                'photo.alt': 'Илья Алексеенко, AI-интегратор',
+                'about.title': 'Обо мне',
+                'about.p1': 'Беру проект целиком: от первого созвона до прод-деплоя. Архитектура, разработка, инфраструктура, обучение команды — всё на одном человеке. Для клиента это значит: один ответственный за результат, без потерь между отделами и менеджеров посередине.',
+                'about.p2': 'Разворачиваю проекты гибко: на своей инфраструктуре или поднимаю отдельный сервер под клиента. В любом случае — без привязки к no-code-облакам, их лимитам и абонентской плате.',
+                'about.principle.title': 'Не продаю AI ради AI.',
+                'about.principle.body': 'Автоматизирую то, что у клиента уже работает руками, — чтобы оно начало работать само. Если задача решается без LLM дешевле и надёжнее — так и делаю.',
+                'about.meta.location.label': 'Локация',
+                'about.meta.location.value': 'Куритиба, Бразилия. Удалённо, под часовой пояс клиента.',
+                'about.meta.langs.label': 'Языки',
+                'about.meta.langs.value': 'русский (нативный), английский (B2→C1), португальский (учу).',
+                'about.meta.formats.label': 'Форматы',
+                'about.meta.formats.value': 'проекты под ключ с фиксированной ценой · консультации · корпоративное обучение n8n для команды.'
             }
         };
 
         var CTA = {
-            en: 'https://calendly.com/REPLACE-ME', /* TODO(Ilia): real Calendly URL */
+            en: 'https://calendly.com/ilia-alekseenko-work/15-min-call',
             ru: 'https://t.me/alekseenko_ai'
         };
 
         function resolveLang() {
             var p = new URLSearchParams(window.location.search).get('lang');
-            var l = p || localStorage.getItem('lang') || 'en';
+            var l = p || localStorage.getItem('lang') || 'ru';
             return l === 'ru' ? 'ru' : 'en';
         }
 
@@ -718,6 +761,23 @@
                 el.setAttribute('aria-pressed', active ? 'true' : 'false');
                 el.classList.toggle('lang-btn--active', active);
             });
+
+            var aboutVideoFiles = { ru: 'img/hero-intro.mp4', en: 'img/hero-intro-eng.mp4' };
+            var aboutFigure = document.querySelector('.about__video');
+            var aboutVideoEl = aboutFigure ? aboutFigure.querySelector('video') : null;
+            var aboutSrcEl = document.getElementById('about-video-src');
+            if (aboutVideoEl && aboutSrcEl && aboutFigure) {
+                aboutFigure.style.display = '';
+                aboutSrcEl.src = aboutVideoFiles[lang];
+                // error can fire on <source> (404) or on <video> (codec/decode) — handle both
+                aboutSrcEl.onerror = function () { aboutFigure.style.display = 'none'; };
+                aboutVideoEl.onerror = function () { aboutFigure.style.display = 'none'; };
+                // seek to first frame once metadata arrives (avoids downloading full file)
+                aboutVideoEl.onloadedmetadata = function () {
+                    if (aboutVideoEl.currentTime === 0) aboutVideoEl.currentTime = 0.001;
+                };
+                aboutVideoEl.load();
+            }
         }
 
         window.setLang = function (lang) {
