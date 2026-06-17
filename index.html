@@ -112,18 +112,39 @@
             <div class="hero__media">
                 <div class="hero__glow"></div>
                 <img src="img/hero.png" alt="Ilia Alekseenko, AI automation engineer" class="hero__photo-img" width="400" height="600">
-                <div class="hero__chip">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <div class="hero__badge-stack" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <div>
-                        <span class="hero__chip-l1" data-i18n="hero.chip1">20+ systems live</span>
-                        <span class="hero__chip-l2" data-i18n="hero.chip2">in production</span>
-                    </div>
+                    <span>Claude · n8n · Python</span>
                 </div>
-                <div class="hero__badge" aria-hidden="true">
-                    <span class="hero__badge-l1" data-i18n="hero.badge1">4+</span>
-                    <span class="hero__badge-l2" data-i18n="hero.badge2">yrs</span>
+                <div class="hero__badge-live" aria-hidden="true">
+                    <span class="hero__live-dot">
+                        <span class="hero__live-ring"></span>
+                    </span>
+                    <span data-i18n="hero.badge.live">в проде 24/7</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero__strip">
+            <div class="container container--wide">
+                <div class="hero__strip-row">
+                    <div class="hero__strip-cell">
+                        <span class="hero__strip-num">30+</span>
+                        <span class="hero__strip-lbl" data-i18n="strip.l1">ПРОЕКТОВ В ПРОДЕ</span>
+                    </div>
+                    <div class="hero__strip-cell">
+                        <span class="hero__strip-num">6</span>
+                        <span class="hero__strip-lbl" data-i18n="strip.l2">КЛИЕНТОВ ВЕРНУЛИСЬ</span>
+                    </div>
+                    <div class="hero__strip-cell">
+                        <span class="hero__strip-num hero__strip-num--accent">−99%</span>
+                        <span class="hero__strip-lbl" data-i18n="strip.l3">ВРЕМЕНИ НА РУТИНУ</span>
+                    </div>
+                    <div class="hero__strip-cell">
+                        <span class="hero__strip-num">4+</span>
+                        <span class="hero__strip-lbl" data-i18n="strip.l4">ЛЕТ В АВТОМАТИЗАЦИИ</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -176,13 +197,6 @@
     <section class="cases" id="cases">
         <div class="container">
             <h2 class="section-title">Кейсы</h2>
-
-            <!-- stats band — placeholder values; Ilia confirms real numbers -->
-            <div class="cases__stats">
-                <div class="cases__stat"><span>проектов сдано</span><b>20+</b></div>
-                <div class="cases__stat"><span>лет в проде</span><b>4+</b></div>
-                <div class="cases__stat"><span>рынков</span><b>5</b></div>
-            </div>
 
             <!-- F1: Корпоративное обучение n8n + AI — flagship -->
             <article class="case-flagship">
@@ -667,13 +681,12 @@
                 'hero.h1.l1': 'I take the manual work',
                 'hero.h1.l2': 'out of your business.',
                 'hero.subline': 'Custom AI systems and automation — from first call to production.',
-                'hero.cta': 'Book a free 15-min call',
-                'hero.reassure': 'No pitch — we map what’s worth automating.',
-                'hero.trust': '20+ projects shipped · 4+ years in production',
-                'hero.chip1': '20+ systems live',
-                'hero.chip2': 'in production',
-                'hero.badge1': '4+',
-                'hero.badge2': 'yrs',
+                ‘hero.cta’: ‘Book a free 15-min call’,
+                ‘hero.badge.live’: ‘live 24/7’,
+                ‘strip.l1’: ‘PROJECTS SHIPPED’,
+                ‘strip.l2’: ‘CLIENTS RETURNED’,
+                ‘strip.l3’: ‘MANUAL WORK’,
+                ‘strip.l4’: ‘YEARS IN AUTOMATION’,
                 'photo.alt': 'Ilia Alekseenko, AI automation engineer',
                 'about.title': 'About',
                 'about.p1': 'I take the whole project end to end: from the first call to production deploy. Architecture, development, infrastructure, team training — all on one person. For the client that means one person accountable for the result, with no hand-offs between departments and no managers in the middle.',
@@ -698,12 +711,11 @@
                 'hero.h1.l2': 'из бизнеса.',
                 'hero.subline': 'AI-системы и автоматизация под ключ — от первого созвона до прода.',
                 'hero.cta': 'Обсудить задачу',
-                'hero.reassure': 'Никаких продаж — разберём, что реально стоит автоматизировать.',
-                'hero.trust': '20+ проектов сдано · 4+ года в проде',
-                'hero.chip1': '20+ систем',
-                'hero.chip2': 'в проде',
-                'hero.badge1': '4+',
-                'hero.badge2': 'года',
+                'hero.badge.live': 'в проде 24/7',
+                'strip.l1': 'ПРОЕКТОВ В ПРОДЕ',
+                'strip.l2': 'КЛИЕНТОВ ВЕРНУЛИСЬ',
+                'strip.l3': 'ВРЕМЕНИ НА РУТИНУ',
+                'strip.l4': 'ЛЕТ В АВТОМАТИЗАЦИИ',
                 'photo.alt': 'Илья Алексеенко, AI-интегратор',
                 'about.title': 'Обо мне',
                 'about.p1': 'Беру проект целиком: от первого созвона до прод-деплоя. Архитектура, разработка, инфраструктура, обучение команды — всё на одном человеке. Для клиента это значит: один ответственный за результат, без потерь между отделами и менеджеров посередине.',

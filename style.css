@@ -248,7 +248,7 @@ a {
 
 /* ===== HERO ===== */
 .hero {
-  padding: 88px 0;
+  padding: 64px 0 0;
 }
 
 .hero__inner {
@@ -345,72 +345,113 @@ a {
   filter: drop-shadow(0 14px 34px rgba(0, 0, 0, 0.55));
 }
 
-.hero__chip {
+/* Floating pill badges */
+.hero__badge-stack,
+.hero__badge-live {
   position: absolute;
-  bottom: 64px;
-  left: 0;
   z-index: 2;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 9px 12px;
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(13, 15, 19, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(79, 142, 247, 0.45);
+  font-size: 13px;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.hero__badge-stack {
+  bottom: 64px;
+  left: 0;
   color: var(--accent);
 }
 
-.hero__chip svg {
+.hero__badge-stack span {
+  color: var(--text);
+}
+
+.hero__badge-stack svg {
   flex-shrink: 0;
 }
 
-.hero__chip-l1,
-.hero__chip-l2 {
-  display: block;
-  white-space: nowrap;
-  line-height: 1.3;
-}
-
-.hero__chip-l1 {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.hero__chip-l2 {
-  font-size: 11px;
-  color: var(--muted);
-}
-
-.hero__badge {
-  position: absolute;
+.hero__badge-live {
   top: 40px;
   right: 0;
-  z-index: 2;
-  width: 56px;
-  height: 56px;
+}
+
+/* Green pulse dot */
+.hero__live-dot {
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--surface);
-  border: 1px solid var(--accent);
+  background: #37d67a;
+  flex-shrink: 0;
+}
+
+.hero__live-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid #37d67a;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__live-ring {
+    animation: live-pulse 2s ease-out infinite;
+  }
+}
+
+@keyframes live-pulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(2.5); opacity: 0;   }
+}
+
+/* Track-record strip */
+.hero__strip {
+  padding: 32px 0 40px;
+}
+
+.hero__strip-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 28px;
+}
+
+.hero__strip-cell {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
+  gap: 6px;
+  padding: 0 16px;
+  text-align: center;
 }
 
-.hero__badge-l1 {
-  font-size: 15px;
-  font-weight: 700;
+.hero__strip-num {
+  font-size: 30px;
+  font-weight: 600;
   color: var(--text);
+  letter-spacing: -0.02em;
   line-height: 1;
 }
 
-.hero__badge-l2 {
-  font-size: 10px;
-  color: var(--muted);
+.hero__strip-num--accent {
+  color: var(--accent);
+}
+
+.hero__strip-lbl {
+  font-size: 11px;
   font-weight: 500;
-  line-height: 1;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
 }
 
 /* ===== CASES ===== */
@@ -1157,39 +1198,7 @@ a {
   max-width: 460px;
 }
 
-/* ===== CASES STATS BAND (v3) ===== */
-.cases__stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 40px;
-}
 
-.cases__stat {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 20px 24px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-}
-
-.cases__stat b {
-  font-size: 30px;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: -0.02em;
-  line-height: 1;
-}
-
-.cases__stat span {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
 
 /* ===== METRIC BLOCKS (v3) ===== */
 .metrics {
@@ -1283,11 +1292,6 @@ a {
 
 /* ===== RESPONSIVE ADDITIONS (v3) ===== */
 @media (max-width: 700px) {
-  .cases__stats {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
   .metrics {
     gap: 6px;
   }
@@ -1354,7 +1358,7 @@ a {
 /* ===== HERO RESPONSIVE (v4) ===== */
 @media (min-width: 640px) and (max-width: 979px) {
   .hero {
-    padding: 64px 0;
+    padding: 48px 0 0;
   }
 
   .hero__h1 {
@@ -1375,9 +1379,20 @@ a {
   }
 }
 
+@media (max-width: 768px) {
+  .hero__strip-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 0;
+  }
+
+  .hero__strip-cell {
+    padding: 0 12px;
+  }
+}
+
 @media (max-width: 639px) {
   .hero {
-    padding: 56px 0 48px;
+    padding: 48px 0 0;
   }
 
   .hero__inner {
@@ -1405,12 +1420,12 @@ a {
     height: 260px;
   }
 
-  .hero__chip {
+  .hero__badge-stack {
     bottom: 20px;
     left: 10px;
   }
 
-  .hero__badge {
+  .hero__badge-live {
     top: 20px;
     right: 10px;
   }
