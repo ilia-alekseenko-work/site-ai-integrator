@@ -989,9 +989,10 @@
             if (!cat) return '';
             var tools = getTools(cat, lang);
             return '<div class="tools-grid">' + tools.map(function (t) {
+                var monoHtml = '<div class="tool-card__mono" aria-hidden="true">' + t.mono + '</div>';
                 var ico = t.icon
-                    ? '<img class="tool-card__icon" src="/icons/' + t.icon + '.svg" width="34" height="34" alt="" aria-hidden="true">'
-                    : '<div class="tool-card__mono" aria-hidden="true">' + t.mono + '</div>';
+                    ? '<img class="tool-card__icon" src="icons/' + t.icon + '.svg" width="34" height="34" alt="" aria-hidden="true" data-mono="' + t.mono + '" onerror="var d=document.createElement(\'div\');d.className=\'tool-card__mono\';d.setAttribute(\'aria-hidden\',\'true\');d.textContent=this.dataset.mono;this.parentNode.replaceChild(d,this)">'
+                    : monoHtml;
                 return '<div class="tool-card">' + ico + '<span class="tool-card__name">' + t.name + '</span></div>';
             }).join('') + '</div>';
         }
