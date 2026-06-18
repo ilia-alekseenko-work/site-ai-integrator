@@ -480,57 +480,10 @@
     <!-- STACK -->
     <section class="stack" id="stack">
         <div class="container">
-            <h2 class="section-title">Инструменты</h2>
-            <div class="stack__groups">
-                <div class="stack__group">
-                    <span class="stack__label">AI &amp; LLM</span>
-                    <div class="stack__pills">
-                        <span class="stack__item">Claude API</span>
-                        <span class="stack__item">OpenAI</span>
-                        <span class="stack__item">Gemini</span>
-                        <span class="stack__item">Ollama</span>
-                    </div>
-                </div>
-                <div class="stack__group">
-                    <span class="stack__label">Оркестрация</span>
-                    <div class="stack__pills">
-                        <span class="stack__item">n8n</span>
-                        <span class="stack__item">Python</span>
-                        <span class="stack__item">FastAPI</span>
-                    </div>
-                </div>
-                <div class="stack__group">
-                    <span class="stack__label">Интеграции</span>
-                    <div class="stack__pills">
-                        <span class="stack__item">Telegram Bot API</span>
-                        <span class="stack__item">Bitrix24</span>
-                        <span class="stack__item">AmoCRM</span>
-                        <span class="stack__item">T-Банк API</span>
-                        <span class="stack__item">СБИС</span>
-                    </div>
-                </div>
-                <div class="stack__group">
-                    <span class="stack__label">Данные &amp; инфра</span>
-                    <div class="stack__pills">
-                        <span class="stack__item">PostgreSQL</span>
-                        <span class="stack__item">Qdrant</span>
-                        <span class="stack__item">Docker</span>
-                    </div>
-                </div>
-                <div class="stack__group">
-                    <span class="stack__label">Локальные модели</span>
-                    <div class="stack__pills">
-                        <span class="stack__item">Llama</span>
-                        <span class="stack__item">Qwen3.5</span>
-                        <span class="stack__item">LM Studio</span>
-                    </div>
-                </div>
-                <div class="stack__group">
-                    <span class="stack__label">Другое</span>
-                    <div class="stack__pills">
-                        <span class="stack__item">Make</span>
-                    </div>
-                </div>
+            <h2 class="section-title" data-i18n="stack.title">Инструменты</h2>
+            <div id="tools-tabs">
+                <div class="tabs__list" role="tablist" id="tools-tablist" aria-label="Tool categories"></div>
+                <div class="tabs__panel" role="tabpanel" id="tools-panel" tabindex="0"></div>
             </div>
         </div>
     </section>
@@ -698,7 +651,8 @@
                 'about.meta.langs.label': 'Languages',
                 'about.meta.langs.value': 'Russian (native), English (B2→C1), Portuguese (learning).',
                 'about.meta.formats.label': 'Formats',
-                'about.meta.formats.value': 'fixed-price turnkey projects · consulting · n8n team training.'
+                'about.meta.formats.value': 'fixed-price turnkey projects · consulting · n8n team training.',
+                'stack.title': 'Tools'
             },
             ru: {
                 'brand.name': 'Илья Алексеенко',
@@ -727,7 +681,8 @@
                 'about.meta.langs.label': 'Языки',
                 'about.meta.langs.value': 'русский (нативный), английский (B2→C1), португальский (учу).',
                 'about.meta.formats.label': 'Форматы',
-                'about.meta.formats.value': 'проекты под ключ с фиксированной ценой · консультации · корпоративное обучение n8n для команды.'
+                'about.meta.formats.value': 'проекты под ключ с фиксированной ценой · консультации · корпоративное обучение n8n для команды.',
+                'stack.title': 'Инструменты'
             }
         };
 
@@ -899,6 +854,212 @@
                 if (e.key === 'Escape') closeLightbox();
             });
         })();
+    </script>
+
+    <!-- TOOLS TAB COMPONENT -->
+    <script>
+    (function () {
+        var CATS = [
+            {
+                id: 'ai', ru: 'AI & LLM', en: 'AI & LLM',
+                tools: [
+                    { name: 'Claude API',  mono: 'C',  icon: 'claude'       },
+                    { name: 'OpenAI',      mono: 'O',  icon: null            },
+                    { name: 'Gemini',      mono: 'G',  icon: 'googlegemini'  },
+                    { name: 'DeepSeek',    mono: 'DS', icon: 'deepseek'      }
+                ]
+            },
+            {
+                id: 'local', ru: '\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0435 \u043c\u043e\u0434\u0435\u043b\u0438', en: 'Local models',
+                tools: [
+                    { name: 'Llama',     mono: 'Ll', icon: null     },
+                    { name: 'Qwen 3.5', mono: 'Q',  icon: null     },
+                    { name: 'Ollama',   mono: 'Ol', icon: 'ollama' },
+                    { name: 'LM Studio',mono: 'LM', icon: null     }
+                ]
+            },
+            {
+                id: 'orch', ru: '\u041e\u0440\u043a\u0435\u0441\u0442\u0440\u0430\u0446\u0438\u044f \u0438 \u043a\u043e\u0434', en: 'Orchestration & code',
+                tools: [
+                    { name: 'n8n',    mono: 'n8', icon: 'n8n'     },
+                    { name: 'Make',   mono: 'M',  icon: 'make'    },
+                    { name: 'Python', mono: 'Py', icon: 'python'  },
+                    { name: 'FastAPI',mono: 'F',  icon: 'fastapi' }
+                ]
+            },
+            {
+                id: 'google', ru: 'Google', en: 'Google',
+                tools: [
+                    { name: 'Sheets',        mono: 'Sh', icon: 'googlesheets'   },
+                    { name: 'Calendar',      mono: 'Ca', icon: 'googlecalendar' },
+                    { name: 'Drive',         mono: 'Dr', icon: 'googledrive'    },
+                    { name: 'Gmail',         mono: 'Gm', icon: 'gmail'          },
+                    { name: 'Apps Script',   mono: 'AS', icon: null             },
+                    { name: 'Cloud Console', mono: 'CC', icon: 'googlecloud'    }
+                ]
+            },
+            {
+                id: 'crm', ru: 'CRM \u0438 \u0440\u0430\u0431\u043e\u0442\u0430', en: 'CRM, ops & forms',
+                tools: [
+                    { name: 'GoHighLevel', mono: 'GHL', icon: null        },
+                    { name: 'Zoho',        mono: 'Z',   icon: 'zoho'      },
+                    { name: 'Monday',      mono: 'Mo',  icon: null        },
+                    { name: 'ClickUp',     mono: 'Cl',  icon: 'clickup'   },
+                    { name: 'Jotform',     mono: 'JF',  icon: null        },
+                    { name: 'Calendly',    mono: 'Cy',  icon: 'calendly'  },
+                    { name: 'Bitrix24',    mono: 'B',   icon: null        },
+                    { name: 'AmoCRM',      mono: 'A',   icon: null        }
+                ]
+            },
+            {
+                id: 'payments', ru: '\u041f\u043b\u0430\u0442\u0435\u0436\u0438', en: 'Payments',
+                tools: [
+                    { name: 'Stripe',       mono: 'St', icon: 'stripe'       },
+                    { name: 'PayPal',       mono: 'PP', icon: 'paypal'       },
+                    { name: 'Square',       mono: 'Sq', icon: 'square'       },
+                    { name: 'Mercado Pago', mono: 'MP', icon: 'mercadopago'  },
+                    { name: 'GoCardless',   mono: 'GC', icon: null           }
+                ]
+            },
+            {
+                id: 'channels', ru: '\u041a\u0430\u043d\u0430\u043b\u044b', en: 'Channels & social',
+                tools: [
+                    { name: 'Telegram Bot API', mono: 'TG', icon: 'telegram',  hide_en: false },
+                    { name: 'WhatsApp',          mono: 'W',  icon: 'whatsapp',  hide_en: false },
+                    { name: 'Instagram',         mono: 'IG', icon: 'instagram', hide_en: false },
+                    { name: 'Facebook',          mono: 'FB', icon: 'facebook',  hide_en: false },
+                    { name: 'VK',                mono: 'VK', icon: 'vk',        hide_en: true  },
+                    { name: 'Avito',             mono: 'Av', icon: null,        hide_en: true  }
+                ]
+            },
+            {
+                id: 'data', ru: '\u0414\u0430\u043d\u043d\u044b\u0435 \u0438 \u043f\u0430\u0440\u0441\u0438\u043d\u0433', en: 'Data & scraping',
+                tools: [
+                    { name: 'PostgreSQL',    mono: 'Pg', icon: 'postgresql' },
+                    { name: 'Supabase',      mono: 'Sb', icon: 'supabase'   },
+                    { name: 'Redis',         mono: 'R',  icon: 'redis'      },
+                    { name: 'Qdrant',        mono: 'Qd', icon: 'qdrant'     },
+                    { name: 'Docker',        mono: 'D',  icon: 'docker'     },
+                    { name: 'Apify',         mono: 'Ap', icon: null         },
+                    { name: 'BeautifulSoup', mono: 'BS', icon: null         }
+                ]
+            },
+            {
+                id: 'kyc', ru: '\u0412\u0435\u0440\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f', en: 'KYC & verification',
+                tools: [
+                    { name: 'LSEG World-Check', mono: 'WC', icon: null, hide_en: false },
+                    { name: '\u0422-\u0411\u0430\u043d\u043a API',  mono: '\u0422',  icon: null, hide_en: true  },
+                    { name: '\u0421\u0411\u0418\u0421',             mono: '\u0421',  icon: null, hide_en: true  }
+                ]
+            }
+        ];
+
+        var activeCatId = 'ai';
+        var currentLang = 'ru';
+
+        function getTools(cat, lang) {
+            return cat.tools.filter(function (t) {
+                return !(t.hide_en && lang === 'en');
+            });
+        }
+
+        function buildTabsHTML(lang) {
+            return CATS.map(function (cat) {
+                var count = getTools(cat, lang).length;
+                var active = cat.id === activeCatId;
+                var label = lang === 'ru' ? cat.ru : cat.en;
+                return '<button class="tabs__tab' + (active ? ' tabs__tab--active' : '') + '"' +
+                    ' role="tab"' +
+                    ' aria-selected="' + (active ? 'true' : 'false') + '"' +
+                    ' aria-controls="tools-panel"' +
+                    ' id="tab-' + cat.id + '"' +
+                    ' tabindex="' + (active ? '0' : '-1') + '"' +
+                    ' data-cat="' + cat.id + '">' +
+                    label +
+                    ' <span class="tabs__count">' + count + '</span>' +
+                    '</button>';
+            }).join('');
+        }
+
+        function buildPanelHTML(catId, lang) {
+            var cat = null;
+            for (var i = 0; i < CATS.length; i++) {
+                if (CATS[i].id === catId) { cat = CATS[i]; break; }
+            }
+            if (!cat) return '';
+            var tools = getTools(cat, lang);
+            return '<div class="tools-grid">' + tools.map(function (t) {
+                var ico = t.icon
+                    ? '<img class="tool-card__icon" src="/icons/' + t.icon + '.svg" width="34" height="34" alt="" aria-hidden="true">'
+                    : '<div class="tool-card__mono" aria-hidden="true">' + t.mono + '</div>';
+                return '<div class="tool-card">' + ico + '<span class="tool-card__name">' + t.name + '</span></div>';
+            }).join('') + '</div>';
+        }
+
+        function render(lang) {
+            currentLang = lang;
+            var list  = document.getElementById('tools-tablist');
+            var panel = document.getElementById('tools-panel');
+            if (list)  list.innerHTML  = buildTabsHTML(lang);
+            if (panel) {
+                panel.innerHTML = buildPanelHTML(activeCatId, lang);
+                panel.setAttribute('aria-labelledby', 'tab-' + activeCatId);
+            }
+        }
+
+        function activateTab(catId) {
+            activeCatId = catId;
+            var list  = document.getElementById('tools-tablist');
+            var panel = document.getElementById('tools-panel');
+            if (list) {
+                list.querySelectorAll('[role="tab"]').forEach(function (btn) {
+                    var active = btn.getAttribute('data-cat') === catId;
+                    btn.setAttribute('aria-selected', active ? 'true' : 'false');
+                    btn.classList.toggle('tabs__tab--active', active);
+                    btn.setAttribute('tabindex', active ? '0' : '-1');
+                });
+            }
+            if (panel) {
+                panel.innerHTML = buildPanelHTML(catId, currentLang);
+                panel.setAttribute('aria-labelledby', 'tab-' + catId);
+            }
+        }
+
+        /* ── Tab click / keyboard ── */
+        document.addEventListener('click', function (e) {
+            var btn = e.target.closest('[role="tab"]');
+            if (!btn || !btn.closest('#tools-tablist')) return;
+            activateTab(btn.getAttribute('data-cat'));
+            btn.focus();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+            var list = document.getElementById('tools-tablist');
+            if (!list || !list.contains(document.activeElement)) return;
+            var tabs = Array.from(list.querySelectorAll('[role="tab"]'));
+            var idx  = tabs.indexOf(document.activeElement);
+            if (idx < 0) return;
+            e.preventDefault();
+            var next = e.key === 'ArrowRight'
+                ? (idx + 1) % tabs.length
+                : (idx - 1 + tabs.length) % tabs.length;
+            activateTab(tabs[next].getAttribute('data-cat'));
+            tabs[next].focus();
+        });
+
+        /* ── Language hook ── */
+        var _origSetLang = window.setLang;
+        window.setLang = function (lang) {
+            _origSetLang(lang);
+            render(lang);
+        };
+
+        /* ── Initial render ── */
+        var initLang = document.documentElement.lang || 'ru';
+        currentLang  = initLang;
+        render(initLang);
+    })();
     </script>
 
 
