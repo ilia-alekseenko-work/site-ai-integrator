@@ -863,7 +863,7 @@
             {
                 id: 'ai', ru: 'AI & LLM', en: 'AI & LLM',
                 tools: [
-                    { name: 'Claude API',  mono: 'C',  icon: 'claude'       },
+                    { name: 'Claude API',  mono: 'C',  icon: 'anthropic'    },
                     { name: 'OpenAI',      mono: 'O',  icon: null            },
                     { name: 'Gemini',      mono: 'G',  icon: 'googlegemini'  },
                     { name: 'DeepSeek',    mono: 'DS', icon: 'deepseek'      }
@@ -976,7 +976,7 @@
                     ' tabindex="' + (active ? '0' : '-1') + '"' +
                     ' data-cat="' + cat.id + '">' +
                     label +
-                    ' <span class="tabs__count">' + count + '</span>' +
+                    (count > 1 ? ' <span class="tabs__count">' + count + '</span>' : '') +
                     '</button>';
             }).join('');
         }

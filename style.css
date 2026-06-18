@@ -616,8 +616,8 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 16px 10px 12px;
+  gap: 5px;
+  padding: 10px 8px 8px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -630,20 +630,20 @@ a {
 }
 
 .tool-card__icon {
-  width: 34px;
-  height: 34px;
+  width: 22px;
+  height: 22px;
   filter: brightness(0) invert(1);
   opacity: 0.5;
   flex-shrink: 0;
 }
 
 .tool-card__mono {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
   background: var(--accent-bg);
   color: var(--accent);
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 700;
   display: flex;
   align-items: center;
