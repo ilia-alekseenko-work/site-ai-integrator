@@ -311,39 +311,69 @@
                 <span>Другие проекты</span>
             </div>
 
-            <div class="cards">
+            <!-- Compact pilot cards — click to open modal -->
+            <div class="ccards">
 
-                <!-- R1. Аудит документов -->
-                <article class="card">
-                    <div>
-                        <h3 class="card__title">Аудит документов</h3>
-                        <div class="card__tags">
+                <!-- C1. Аудит документов -->
+                <article class="ccard" tabindex="0" role="button" aria-haspopup="dialog" data-case="audit">
+                    <div class="ccard__body">
+                        <h3 class="ccard__title">Аудит документов</h3>
+                        <div class="ccard__badges">
+                            <div class="metric metric--before"><span>было</span><b>3 дня</b></div>
+                            <div class="metric metric--after"><span>стало</span><b>5 минут</b></div>
+                            <div class="metric metric--highlight"><span>точность</span><b>100%</b></div>
+                        </div>
+                        <p class="ccard__summary">Проверка обязательных документов у 100+ подрядчиков</p>
+                        <div class="ccard__tags">
                             <span class="tag">n8n</span>
                             <span class="tag">Google Drive</span>
                             <span class="tag">Google Sheets</span>
                         </div>
                     </div>
-                    <div class="metrics">
-                        <div class="metric metric--before"><span>было</span><b>3 дня</b></div>
-                        <div class="metric metric--after"><span>стало</span><b>5 минут</b></div>
-                        <div class="metric metric--highlight"><span>точность</span><b>100%</b></div>
-                    </div>
-                    <p class="card__desc">Каждый квартал бухгалтерия вручную проверяла 100+ подрядчиков:
-                        у каждого должны быть 3 обязательных документа в Google Drive.
-                        Структура папок: Год → Квартал → Подрядчик → Объект.
-                        Сотни папок, ручная проверка, высокий риск ошибки — 3 дня работы.<br><br>
-                        Автоматизация на n8n:<br>
-                        → Берёт актуальный список объектов из Google Sheets<br>
-                        → Сканирует структуру папок Drive<br>
-                        → Проверяет наличие каждого из 3 файлов<br>
-                        → Логирует отсутствующие документы<br>
-                        → Формирует отчёт о расхождениях и отправляет ссылку руководителю<br><br>
-                        Результат: 3 дня → 5 минут по расписанию. Точность 100% —
-                        система не устаёт и не пропускает файлы.</p>
-                    <div class="card__media">
-                        <img src="img/workflow-audit.jpg" alt="Аудит документов — воркфлоу" loading="lazy" width="600" height="400" />
-                    </div>
+                    <span class="ccard__cta" aria-hidden="true">детали →</span>
                 </article>
+
+                <!-- C2. Мониторинг конкурентов -->
+                <article class="ccard" tabindex="0" role="button" aria-haspopup="dialog" data-case="monitor">
+                    <div class="ccard__body">
+                        <h3 class="ccard__title">Мониторинг конкурентов</h3>
+                        <div class="ccard__badges">
+                            <div class="metric metric--before"><span>было</span><b>.exe 500 MB</b></div>
+                            <div class="metric metric--after"><span>стало</span><b>веб-дашборд</b></div>
+                            <div class="metric metric--highlight"><span>охват</span><b>2400+ объявл.</b></div>
+                        </div>
+                        <p class="ccard__summary">Слежение за ценами 20 подрядчиков и 2400+ объявлений</p>
+                        <div class="ccard__tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Streamlit</span>
+                            <span class="tag">Telegram Bot</span>
+                        </div>
+                    </div>
+                    <span class="ccard__cta" aria-hidden="true">детали →</span>
+                </article>
+
+                <!-- C3. Платёжные поручения -->
+                <article class="ccard" tabindex="0" role="button" aria-haspopup="dialog" data-case="payment">
+                    <div class="ccard__body">
+                        <h3 class="ccard__title">Платёжные поручения без ручного ввода</h3>
+                        <div class="ccard__badges">
+                            <div class="metric metric--highlight"><span>ручной ввод</span><b>0</b></div>
+                        </div>
+                        <p class="ccard__summary">Накладная из СБИС → готовое поручение в Т-Банке автоматически</p>
+                        <div class="ccard__tags">
+                            <span class="tag">n8n</span>
+                            <span class="tag">СБИС</span>
+                            <span class="tag">Т-Банк API</span>
+                        </div>
+                    </div>
+                    <span class="ccard__cta" aria-hidden="true">детали →</span>
+                </article>
+
+            </div>
+
+            <!-- Standard expanded cards (unchanged) -->
+            <div class="cards">
 
                 <!-- R5. Задачи из Telegram для команды -->
                 <article class="card">
@@ -367,31 +397,6 @@
                         Клиент вернулся через полгода после первого проекта (Telegram-бот для отслеживания обязательств в групповых чатах). Сейчас Todoist-интеграция в финале тестирования.</p>
                     <div class="card__media">
                         <img src="img/danil-todoist.jpg" alt="Задачи из Telegram для команды — Todoist" loading="lazy" width="600" height="400" />
-                    </div>
-                </article>
-
-                <!-- R2. Мониторинг конкурентов -->
-                <article class="card">
-                    <div>
-                        <h3 class="card__title">Мониторинг конкурентов</h3>
-                        <div class="card__tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">Streamlit</span>
-                            <span class="tag">Telegram Bot</span>
-                        </div>
-                    </div>
-                    <div class="metrics">
-                        <div class="metric metric--before"><span>было</span><b>.exe 500 MB</b></div>
-                        <div class="metric metric--after"><span>стало</span><b>веб-дашборд</b></div>
-                        <div class="metric metric--highlight"><span>охват</span><b>2400+ объявл.</b></div>
-                    </div>
-                    <p class="card__desc">Компания в строительном рынке отслеживала 20 подрядчиков и 2400+
-                        объявлений через громоздкий .exe на 500MB с ручным запуском. Заменил на
-                        веб-дашборд с фильтрами, аналитикой цен и Telegram-алертами на изменения.
-                        Система живёт на сервере и обслуживает себя сама.</p>
-                    <div class="card__media">
-                        <img src="img/dashboard-competitors.jpg" alt="Дашборд мониторинга конкурентов" loading="lazy" width="600" height="400" />
                     </div>
                 </article>
 
@@ -425,28 +430,6 @@
                             <a href="https://youtube.com/shorts/lX34W1ZhJH4" target="_blank" rel="noopener"
                                 class="btn--demo">Watch demo →</a>
                         </div>
-                    </div>
-                </article>
-
-                <!-- R3. Платёжные поручения без ручного ввода -->
-                <article class="card">
-                    <div>
-                        <h3 class="card__title">Платёжные поручения без ручного ввода</h3>
-                        <div class="card__tags">
-                            <span class="tag">n8n</span>
-                            <span class="tag">СБИС</span>
-                            <span class="tag">T-Банк API</span>
-                        </div>
-                    </div>
-                    <div class="metrics">
-                        <div class="metric metric--highlight"><span>ручной ввод</span><b>0</b></div>
-                    </div>
-                    <p class="card__desc">Магазин автозапчастей в Санкт-Петербурге: каждая приходная накладная
-                        из СБИС требовала ручного создания платёжного поручения в Т-Банке. Теперь
-                        накладная автоматически создаёт готовое поручение через API Т-Банка.
-                        Ноль ручного ввода, ноль ошибок транскрипции.</p>
-                    <div class="card__media">
-                        <img src="img/workflow-sbis-tbank.jpg" alt="Платёжные поручения — воркфлоу СБИС T-Банк" loading="lazy" width="600" height="400" />
                     </div>
                 </article>
 
@@ -903,6 +886,128 @@
                 if (e.key === 'Escape') closeLightbox();
             });
         })();
+    </script>
+
+    <!-- CASE MODAL -->
+    <script>
+    (function () {
+        var CDATA = {
+            audit: {
+                title: 'Аудит документов',
+                tags: ['n8n', 'Google Drive', 'Google Sheets'],
+                screenshot: 'img/workflow-audit.jpg',
+                screenshotAlt: 'Воркфлоу аудита документов в n8n',
+                html: '<p>Каждый квартал бухгалтерия вручную проверяла 100+ подрядчиков: у каждого должны быть 3 обязательных документа в Google Drive. Структура папок: Год → Квартал → Подрядчик → Объект. Сотни папок, ручная проверка, высокий риск ошибки — 3 дня работы.</p>' +
+                      '<p>Что делает автоматизация на n8n:<br>→ Берёт актуальный список объектов из Google Sheets<br>→ Сканирует структуру папок Drive<br>→ Проверяет наличие каждого из 3 файлов<br>→ Логирует отсутствующие документы<br>→ Формирует отчёт о расхождениях и шлёт ссылку руководителю</p>' +
+                      '<p>Результат: 3 дня → 5 минут по расписанию. Точность 100% — система не устаёт и не пропускает файлы.</p>'
+            },
+            monitor: {
+                title: 'Мониторинг конкурентов',
+                tags: ['Python', 'PostgreSQL', 'Streamlit', 'Telegram Bot'],
+                screenshot: null,
+                html: '<p>Компания на строительном рынке отслеживала 20 подрядчиков и 2400+ объявлений через громоздкий .exe на 500 МБ с ручным запуском. Заменил на веб-дашборд с фильтрами, аналитикой цен и Telegram-алертами на изменения. Система живёт на сервере и обслуживает себя сама.</p>'
+            },
+            payment: {
+                title: 'Платёжные поручения без ручного ввода',
+                tags: ['n8n', 'СБИС', 'Т-Банк API'],
+                screenshot: 'img/workflow-sbis-tbank.jpg',
+                screenshotAlt: 'Воркфлоу СБИС → Т-Банк в n8n',
+                html: '<p>Магазин автозапчастей в Санкт-Петербурге: каждая приходная накладная из СБИС требовала ручного создания платёжного поручения в Т-Банке. Теперь накладная автоматически создаёт готовое поручение через API Т-Банка. Ноль ручного ввода, ноль ошибок транскрипции.</p>'
+            }
+        };
+
+        /* Build modal DOM */
+        var overlay = document.createElement('div');
+        overlay.id = 'cmodal';
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-modal', 'true');
+        overlay.setAttribute('aria-labelledby', 'cmodal-title');
+        overlay.setAttribute('hidden', '');
+        overlay.innerHTML =
+            '<div class="cmodal__backdrop"></div>' +
+            '<div class="cmodal__panel" tabindex="-1">' +
+                '<button class="cmodal__close" aria-label="Закрыть">×</button>' +
+                '<h2 class="cmodal__title" id="cmodal-title"></h2>' +
+                '<div class="cmodal__tags"></div>' +
+                '<figure class="cmodal__screenshot" hidden>' +
+                    '<a class="cmodal__img-link" href="" target="_blank" rel="noopener">' +
+                        '<img class="cmodal__img" src="" alt="" loading="lazy" />' +
+                    '</a>' +
+                '</figure>' +
+                '<div class="cmodal__narrative"></div>' +
+            '</div>';
+        document.body.appendChild(overlay);
+
+        var panel      = overlay.querySelector('.cmodal__panel');
+        var titleEl    = overlay.querySelector('.cmodal__title');
+        var tagsEl     = overlay.querySelector('.cmodal__tags');
+        var shotFig    = overlay.querySelector('.cmodal__screenshot');
+        var shotImg    = overlay.querySelector('.cmodal__img');
+        var shotLink   = overlay.querySelector('.cmodal__img-link');
+        var narEl      = overlay.querySelector('.cmodal__narrative');
+        var closeBtn   = overlay.querySelector('.cmodal__close');
+        var lastFocus  = null;
+
+        function openModal(id) {
+            var d = CDATA[id];
+            if (!d) return;
+            titleEl.textContent = d.title;
+            tagsEl.innerHTML = d.tags.map(function (t) {
+                return '<span class="tag">' + t + '</span>';
+            }).join('');
+            if (d.screenshot) {
+                shotImg.src = d.screenshot;
+                shotImg.alt = d.screenshotAlt || '';
+                shotLink.href = d.screenshot;
+                shotFig.removeAttribute('hidden');
+            } else {
+                shotFig.setAttribute('hidden', '');
+            }
+            narEl.innerHTML = d.html;
+            overlay.removeAttribute('hidden');
+            document.body.style.overflow = 'hidden';
+            panel.scrollTop = 0;
+            lastFocus = document.activeElement;
+            panel.focus();
+        }
+
+        function closeModal() {
+            overlay.setAttribute('hidden', '');
+            document.body.style.overflow = '';
+            if (lastFocus) lastFocus.focus();
+        }
+
+        /* Wire compact cards */
+        document.querySelectorAll('.ccard').forEach(function (card) {
+            card.addEventListener('click', function () { openModal(card.dataset.case); });
+            card.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.case); }
+            });
+        });
+
+        /* Close triggers */
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', function (e) {
+            if (e.target === overlay || e.target.classList.contains('cmodal__backdrop')) closeModal();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && !overlay.hasAttribute('hidden')) closeModal();
+        });
+
+        /* Focus trap */
+        panel.addEventListener('keydown', function (e) {
+            if (e.key !== 'Tab') return;
+            var els = panel.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
+            var first = els[0], last = els[els.length - 1];
+            if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+            else            { if (document.activeElement === last)  { e.preventDefault(); first.focus(); } }
+        });
+
+        /* Lightbox integration for modal screenshots */
+        shotImg.addEventListener('click', function () {
+            if (typeof openLightbox === 'function') openLightbox(shotImg.src, shotImg.alt);
+        });
+    })();
     </script>
 
     <!-- TOOLS TAB COMPONENT -->
