@@ -1224,6 +1224,10 @@ a {
   align-items: stretch;
 }
 
+.case-flagship--two-col-wide {
+  grid-template-columns: 1.5fr 1fr;
+}
+
 .cf2__left {
   padding: 28px;
   display: flex;
