@@ -255,47 +255,47 @@
                 </div>
             </article>
 
-            <!-- F2: Тутор-бот по химии — flagship -->
-            <article class="case-flagship">
-                <div class="case-flagship__header">
-                    <h3 class="case-flagship__title">Тутор-бот по химии</h3>
-                    <div class="case-flagship__tags">
-                        <span class="tag">n8n</span>
-                        <span class="tag">Telegram Bot API</span>
-                        <span class="tag">Claude</span>
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">Google Sheets API</span>
+            <!-- F2: Тутор-бот по химии — two-column layout -->
+            <article class="case-flagship case-flagship--two-col">
+                <div class="cf2__left">
+                    <div>
+                        <h3 class="case-flagship__title">Тутор-бот по химии</h3>
+                        <div class="case-flagship__tags">
+                            <span class="tag">n8n</span>
+                            <span class="tag">Telegram Bot API</span>
+                            <span class="tag">OpenAI</span>
+                            <span class="tag">Google Sheets API</span>
+                        </div>
                     </div>
-                </div>
-                <div class="case-flagship__img-grid">
-                    <img src="img/fedor-bot-task.jpg" alt="Запрос задания с фильтрами" loading="lazy" width="600" height="450" />
-                    <img src="img/fedor-bot-lesson.jpg" alt="Информация по занятию" loading="lazy" width="600" height="450" />
-                </div>
-                <div class="case-flagship__content">
                     <div class="metrics">
                         <div class="metric metric--before"><span>было</span><b>34 запроса</b></div>
                         <div class="metric metric--after"><span>стало</span><b>1 batch</b></div>
                         <div class="metric metric--highlight"><span>скорость</span><b>×12</b></div>
                     </div>
-                    <p class="case-flagship__text">Репетитор по химии ведёт несколько учеников параллельно: у каждого своя программа, свой прогресс, свои пробелы. Подобрать задание вручную — открыть банк задач, вспомнить что уже проходили, учесть сложность, не повторить темы. На каждого ученика, каждое занятие.<br><br>
-                    Написали Telegram-бота на n8n:<br>
-                    → Выдаёт задания по номеру, теме и сложности — темы с `!` исключаются автоматически<br>
-                    → Отдельный режим для пробных занятий: задание → ответ → разбор в строгом порядке<br>
-                    → Информация по каждому занятию: оплата, дата, домашнее задание, оценки, ссылка на запись<br>
-                    → Поддерживает несколько номеров билетов в одном запросе<br>
-                    → Планировщик отслеживает прогресс каждого ученика каждые 10 минут<br><br>
-                    Сдано раньше срока. После сдачи клиент возвращался дважды: добавили модуль случайного выбора заданий с фильтрами по сложности и Include/Exclude логикой, а потом переписали сборку пробного экзамена — раньше шёл loop из 34 последовательных запросов к Google Sheets (по одному на каждый лист), теперь один batch-запрос за всё. Скорость сборки выросла примерно в 12 раз, ушли спорадические ошибки от rate limit.</p>
+                    <p class="case-flagship__text">Репетитор ведёт несколько учеников параллельно — подобрать задание вручную долго и легко ошибиться: банк задач, сложность, не повторить пройденное. Telegram-бот на n8n делает это за секунды. Сдано раньше срока, клиент возвращался дважды.</p>
+                    <details class="cf2__details">
+                        <summary class="cf2__summary">Что внутри</summary>
+                        <ul class="cf2__list">
+                            <li>Выдаёт задания по номеру, теме и сложности — темы с <code>!</code> исключаются автоматически</li>
+                            <li>Отдельный режим для пробных занятий: задание → ответ → разбор в строгом порядке</li>
+                            <li>Информация по каждому занятию: оплата, дата, домашнее задание, оценки, ссылка на запись</li>
+                            <li>Поддерживает несколько номеров билетов в одном запросе</li>
+                            <li>Планировщик отслеживает прогресс каждого ученика каждые 10 минут</li>
+                        </ul>
+                    </details>
                 </div>
-                <div class="case-flagship__testimonial">
-                    <div class="case-flagship__stars">★★★★★</div>
-                    <p class="case-flagship__quote">«Илья предложил заменить узлы ИИ на код там, где это было не очень эффективно, — ускорило работу и уменьшило стоимость процесса. Рекомендую специалиста, буду обращаться ещё.»</p>
-                    <div class="case-flagship__meta">
-                        <span class="case-flagship__author">Фёдор Васильевич</span>
-                        <span class="case-flagship__source"> · Avito · 3 апреля 2026</span>
-                    </div>
-                    <a href="img/fedor-review.jpg" target="_blank" rel="noopener" class="case-flagship__review-link">
-                        <img src="img/fedor-review.jpg" alt="Отзыв Фёдора Васильевича на Avito" loading="lazy" width="720" height="400" />
+                <div class="cf2__right">
+                    <a href="img/fedor-bot-task.jpg" target="_blank" rel="noopener" class="cf2__img-link">
+                        <img src="img/fedor-bot-task.jpg" alt="Запрос задания с фильтрами" loading="lazy" width="600" height="450" />
                     </a>
+                    <div class="cf2__review">
+                        <a href="img/fedor-review.jpg" target="_blank" rel="noopener" class="cf2__review-link">
+                            <img src="img/fedor-review.jpg" alt="Отзыв Фёдора Васильевича на Avito" loading="lazy" width="720" height="400" />
+                        </a>
+                        <div class="cf2__stars">★★★★★</div>
+                        <p class="cf2__caption">«Илья предложил заменить узлы ИИ на код там, где это было не очень эффективно, — ускорило работу и уменьшило стоимость процесса. Рекомендую специалиста, буду обращаться ещё.»</p>
+                        <span class="cf2__author">Фёдор Васильевич · Avito · 3 апреля 2026</span>
+                    </div>
                 </div>
             </article>
 
