@@ -481,30 +481,37 @@
             <div class="cases__en">
             <h2 class="section-title">Selected work</h2>
 
-            <!-- EN F1: Semantic search over a video archive -->
+            <!-- EN F1: Document compliance audit -->
             <article class="case-flagship case-flagship--two-col">
                 <div class="cf2__left">
                     <div>
-                        <h3 class="case-flagship__title">Semantic search over a video archive</h3>
+                        <h3 class="case-flagship__title">Document compliance audit</h3>
                         <div class="case-flagship__tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Gemini Flash</span>
-                            <span class="tag">Qdrant</span>
-                            <span class="tag">FFmpeg</span>
+                            <span class="tag">n8n</span>
+                            <span class="tag">Google Drive</span>
+                            <span class="tag">Google Sheets</span>
                         </div>
                     </div>
                     <div class="metrics">
-                        <div class="metric metric--highlight"><span>indexing</span><b>~$5–7 / 100h</b></div>
+                        <div class="metric metric--before"><span>before</span><b>3 days</b></div>
+                        <div class="metric metric--after"><span>after</span><b>5 min</b></div>
+                        <div class="metric metric--highlight"><span>accuracy</span><b>100%</b></div>
                     </div>
-                    <p class="case-flagship__text">A TV journalist with decades of archive — thousands of video files across folders. Finding one moment meant opening a folder, recalling a rough date, scrubbing through. Over and over.</p>
-                    <p class="case-flagship__text">The task: type a query in plain language and get the files where it appears, with timecodes — no remembering filenames, no manual folder digging.</p>
-                    <p class="case-flagship__text">The system processes the archive once: extracts frames, an AI describes what's in them, results are indexed into a vector database. After that, search takes seconds. Indexing cost: ~$5–7 per 100 hours of video.</p>
+                    <p class="case-flagship__text">Every quarter the accounting team checked 100+ contractors by hand: each must have three required documents in Google Drive, filed by Year → Quarter → Contractor → Project. Hundreds of folders, checked manually, a high risk of missing one — three days of work.</p>
+                    <ul class="cf2__list">
+                        <li>Pulls the current list of projects from Google Sheets</li>
+                        <li>Scans the Drive folder structure</li>
+                        <li>Verifies each of the three required files is present</li>
+                        <li>Logs every missing document</li>
+                        <li>Builds a discrepancy report and sends the manager the link</li>
+                    </ul>
+                    <p class="case-flagship__text">Result: 3 days → 5 minutes, on a schedule.</p>
+                    <p class="cf2__takeaway">100% accuracy — the system never tires and never skips a file.</p>
                 </div>
                 <div class="cf2__right">
-                    <a href="img/semantic-search-demo.jpg" target="_blank" rel="noopener" class="cf2__img-link">
-                        <img src="img/semantic-search-demo.jpg" alt="Semantic video search — results with timecodes (demo UI)" loading="lazy" width="913" height="869" />
+                    <a href="img/workflow-audit.jpg" target="_blank" rel="noopener" class="cf2__img-link">
+                        <img src="img/workflow-audit.jpg" alt="Document audit workflow in n8n" loading="lazy" width="732" height="395" />
                     </a>
-                    <a href="https://youtube.com/shorts/lX34W1ZhJH4" target="_blank" rel="noopener" class="ccard__demo">Watch demo →</a>
                 </div>
             </article>
 
@@ -545,7 +552,14 @@
                 <p class="risk-line">15-minute call — no pitch · a month of support included</p>
             </div>
 
-            <!-- EN compact grid (.ccards) + "Other projects" divider — built in Pass 3b -->
+            <!-- EN compact grid (.ccards) + "Other projects" divider — built in Pass 3b.
+                 Includes semantic search as a COMPACT card, label `pet project · live demo`:
+                   title: Semantic search over a video archive
+                   tags:  Python · Gemini Flash · Qdrant · FFmpeg
+                   accent pill: ~$5–7 / 100h
+                   demo (on face + in modal): https://youtube.com/shorts/lX34W1ZhJH4
+                   screenshot: img/semantic-search-demo.jpg
+                 Plus: SEO (Upwork · delivered), Invoice, KYC, Epsifund, and translated cards. -->
             </div><!-- /.cases__en -->
 
         </div>
