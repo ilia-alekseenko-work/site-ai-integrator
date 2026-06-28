@@ -218,6 +218,7 @@
     <!-- CASES -->
     <section class="cases" id="cases">
         <div class="container container--wide">
+            <div class="cases__ru">
             <h2 class="section-title">Кейсы</h2>
 
             <!-- F1: Корпоративное обучение n8n + AI — two-column layout -->
@@ -475,6 +476,77 @@
                 </article>
 
             </div>
+            </div><!-- /.cases__ru -->
+
+            <div class="cases__en">
+            <h2 class="section-title">Selected work</h2>
+
+            <!-- EN F1: Semantic search over a video archive -->
+            <article class="case-flagship case-flagship--two-col">
+                <div class="cf2__left">
+                    <div>
+                        <h3 class="case-flagship__title">Semantic search over a video archive</h3>
+                        <div class="case-flagship__tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Gemini Flash</span>
+                            <span class="tag">Qdrant</span>
+                            <span class="tag">FFmpeg</span>
+                        </div>
+                    </div>
+                    <div class="metrics">
+                        <div class="metric metric--highlight"><span>indexing</span><b>~$5–7 / 100h</b></div>
+                    </div>
+                    <p class="case-flagship__text">A TV journalist with decades of archive — thousands of video files across folders. Finding one moment meant opening a folder, recalling a rough date, scrubbing through. Over and over.</p>
+                    <p class="case-flagship__text">The task: type a query in plain language and get the files where it appears, with timecodes — no remembering filenames, no manual folder digging.</p>
+                    <p class="case-flagship__text">The system processes the archive once: extracts frames, an AI describes what's in them, results are indexed into a vector database. After that, search takes seconds. Indexing cost: ~$5–7 per 100 hours of video.</p>
+                </div>
+                <div class="cf2__right">
+                    <a href="img/semantic-search-demo.jpg" target="_blank" rel="noopener" class="cf2__img-link">
+                        <img src="img/semantic-search-demo.jpg" alt="Semantic video search — results with timecodes (demo UI)" loading="lazy" width="913" height="869" />
+                    </a>
+                    <a href="https://youtube.com/shorts/lX34W1ZhJH4" target="_blank" rel="noopener" class="ccard__demo">Watch demo →</a>
+                </div>
+            </article>
+
+            <!-- EN F2: A form instead of an AI agent -->
+            <article class="case-flagship case-flagship--two-col">
+                <div class="cf2__left">
+                    <div>
+                        <h3 class="case-flagship__title">A form instead of an AI agent</h3>
+                        <div class="case-flagship__tags">
+                            <span class="tag">Telegram Mini App</span>
+                            <span class="tag">n8n</span>
+                            <span class="tag">Apps Script</span>
+                            <span class="tag">Google Sheets</span>
+                            <span class="tag">Google Drive</span>
+                        </div>
+                    </div>
+                    <div class="metrics">
+                        <div class="metric metric--before"><span>before</span><b>3 min</b></div>
+                        <div class="metric metric--after"><span>after</span><b>40 sec</b></div>
+                        <div class="metric metric--highlight"><span>per entry</span><b>4.5× faster</b></div>
+                    </div>
+                    <p class="case-flagship__text">A construction &amp; interiors firm in Dubai logged every expense by hand — open the spreadsheet on a phone, find the row, fill each cell, upload a file to Drive, copy the link, paste it back. 3 minutes per entry, dozens a week.</p>
+                    <p class="case-flagship__text">Everyone would have reached for an AI agent here. I reached for a form. One page that reads live data straight from the client's own Google Sheet, builds the dropdowns on the fly, and writes the entry back — the file goes to Drive, the employee is matched automatically by Telegram ID. Add a new project to the sheet and it appears in the form instantly. No dashboard, no SaaS subscription, nothing to maintain.</p>
+                    <p class="case-flagship__text">Measured before and after: 3 minutes → 40 seconds, 4.5× faster on every entry.</p>
+                    <p class="cf2__takeaway">The clever part wasn't the tech — it was refusing to add any.</p>
+                </div>
+                <div class="cf2__right">
+                    <a href="img/danil-forms.jpg" target="_blank" rel="noopener" class="cf2__img-link">
+                        <img src="img/danil-forms.jpg" alt="Expense entry form in a Telegram Mini App" loading="lazy" width="597" height="884" />
+                    </a>
+                </div>
+            </article>
+
+            <!-- EN mid-CTA -->
+            <div class="mid-cta">
+                <p class="mid-cta__label">Similar challenge?</p>
+                <a href="https://calendly.com/ilia-alekseenko-work/15-min-call" target="_blank" rel="noopener" class="btn btn--primary">Book a free 15-min call</a>
+                <p class="risk-line">15-minute call — no pitch · a month of support included</p>
+            </div>
+
+            <!-- EN compact grid (.ccards) + "Other projects" divider — built in Pass 3b -->
+            </div><!-- /.cases__en -->
 
         </div>
     </section>

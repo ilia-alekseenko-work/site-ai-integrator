@@ -522,6 +522,10 @@ a {
   padding: 72px 0;
 }
 
+.cases__ru, .cases__en { display: contents; }
+html[lang="ru"] .cases__en { display: none; }
+html[lang="en"] .cases__ru { display: none; }
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
